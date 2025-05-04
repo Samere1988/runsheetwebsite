@@ -1,0 +1,233 @@
+/* === GLOBAL RESET === */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #0f172a, #111827);
+    color: #f1f5f9;
+}
+
+/* === HOMEPAGE CONTAINER === */
+.container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #1e293b;
+    border-radius: 20px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+/* === HOMEPAGE BUTTON GRID === */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.menu-card {
+    display: flex;
+    justify-content: center;
+}
+
+/* === HOMEPAGE BUTTONS === */
+.home-button {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+.home-button:hover {
+    background-color: #374151;
+}
+
+/* === RUN SHEET FULL WIDTH === */
+.wide-page {
+    max-width: 95vw;
+    width: 95vw;
+    margin: 40px auto;
+    text-align: left;
+}
+
+/* === LOGO === */
+.page-logo {
+    display: block;
+    height: 100px;
+    width: auto;
+    max-width: 280px;
+    margin: 0 auto 20px auto;
+    object-fit: contain;
+}
+
+/* === HEADERS === */
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.region-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #f1f5f9;
+}
+
+/* === TABLE ACTION BUTTONS === */
+.run-action-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.72rem;
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    margin: 2px 0;
+}
+.run-action-button:hover {
+    background-color: #2563eb;
+}
+.run-action-button.danger {
+    background-color: #ef4444;
+}
+.run-action-button.danger:hover {
+    background-color: #dc2626;
+}
+
+/* === TABLE STRUCTURE === */
+.region-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.region-table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+.region-table {
+    min-width: 1100px;
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+}
+
+.region-title {
+  font-size: 1.3rem;
+}
+
+.region-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+/* === TABLE STYLING === */
+table.dataTable th {
+    font-size: 0.72rem;
+    white-space: nowrap;
+    background-color: #334155;
+    color: #f1f5f9;
+    font-weight: 600;
+    border-bottom: 2px solid #475569;
+    padding: 6px;
+}
+table.dataTable td {
+    font-size: 0.72rem;
+    background-color: #1e293b;
+    color: #e5e7eb;
+    border-top: 1px solid #334155;
+    padding: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+table.dataTable tbody tr.odd { background-color: #273549; }
+table.dataTable tbody tr.even { background-color: #1f2937; }
+table.dataTable tbody tr:hover { background-color: #374151 !important; }
+
+/* === DATATABLE CONTROLS === */
+.dataTables_filter input,
+.dataTables_length select {
+    background-color: #1e293b;
+    color: #e5e7eb;
+    border: 1px solid #475569;
+    border-radius: 6px;
+    padding: 6px;
+    margin-left: 5px;
+}
+
+/* === STRUCTURE === */
+.form-card {
+    background-color: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    margin-top: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.print-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #f8fafc;
+    float: right;
+    margin-top: -20px;
+}
+.cancel-button {
+    background-color: #64748b;
+    color: #f8fafc;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+.cancel-button:hover {
+    background-color: #475569;
+}
+.no-customers {
+    text-align: center;
+    font-style: italic;
+    color: #94a3b8;
+}
+
+/* === PRINT === */
+@media print {
+    .no-print { display: none !important; }
+    body { background: white; color: black; }
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.home-card {
+    display: flex;
+    justify-content: center;
+}

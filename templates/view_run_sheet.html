@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Run Sheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+</head>
+<body class="dark-theme">
+
+<div class="container wide-page print-area">
+    <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Company Logo" class="page-logo">
+
+    <div class="header-row no-print">
+        <h1 class="page-title">Today's Run Sheet</h1>
+        <div class="print-icon" onclick="window.print();">🖨️</div>
+    </div>
+
+    <div class="region-wrapper">
+        {% for region, customers in region_data.items() %}
+        <div class="form-card">
+            <div class="region-header">
+                <span class="region-title">{{ region }}</span>
+                <div class="region-meta">
+                    <span><strong>Driver:</strong> {{ driver_info.get(region, {}).get('name', '____________________') }}</span>
+                    <span><strong>Start Time:</strong> {{ driver_info.get(region, {}).get('start_time', '________________') }}</span>
+                </div>
+            </div>
+            <div class="region-table-wrapper">
+                {% if customers %}
+                <table class="region-table" id="table_{{ loop.index }}">
+                    <thead>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>Customer Name</th>
+                            <th>City</th>
+                            <th>Region</th>
+                            <th>Weight (lbs)</th>
+                            <th>Skids</th>
+                            <th>Bundles</th>
+                            <th>Coils</th>
+                            <th>Closing Time</th>
+                            <th>Pickup (Y/N)</th>
+                            <th class="no-print">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for entry in customers %}
+                        <tr>
+                            <td>{{ entry['Customer ID'] or '' }}</td>
+                            <td>{{ entry['Customer Name'] or '' }}</td>
+                            <td>{{ entry['City'] or '' }}</td>
+                            <td>{{ entry['Region'] or '' }}</td>
+                            <td>{{ entry['Weight'] or '' }}</td>
+                            <td>{{ entry['Skids'] or '' }}</td>
+                            <td>{{ entry['Bundles'] or '' }}</td>
+                            <td>{{ entry['Coils'] or '' }}</td>
+                            <td>{{ entry['Closing Time'] or '' }}</td>
+                            <td>{{ entry['Pickup'] or '' }}</td>
+                            <td class="no-print">
+                                <form action="{{ url_for('runsheet.delete_run_customer') }}" method="post" style="display:inline-block;">
+                                    <input type="hidden" name="id" value="{{ entry['id'] if 'id' in entry else '' }}">
+                                    <input type="hidden" name="customer_id" value="{{ entry['Customer ID'] or '' }}">
+                                    <input type="hidden" name="region" value="{{ entry['Region'] or '' }}">
+                                    <button class="run-action-button danger" type="submit">Delete</button>
+                                </form>
+                                <form action="{{ url_for('runsheet.edit_run_customer', customer_id=entry['Customer ID'] or '') }}" method="get" style="display:inline-block;">
+                                    <button class="run-action-button" type="submit">Edit</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr style="font-weight:bold;">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align:right;">Totals:</td>
+                            <td>{{ region_totals[region]['Weight'] }}</td>
+                            <td>{{ region_totals[region]['Skids'] }}</td>
+                            <td>{{ region_totals[region]['Bundles'] }}</td>
+                            <td>{{ region_totals[region]['Coils'] }}</td>
+                            <td></td>
+                            <td></td>
+                            <td class="no-print"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                {% else %}
+                <div class="no-customers">No customers in this region</div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="button-row no-print" style="margin-top: 20px; text-align: center;">
+        <a href="{{ url_for('home.home') }}" class="run-action-button">Back to Home</a>
+        <a href="{{ url_for('runsheet.save_run_sheet') }}" class="run-action-button">Save as Excel</a>
+        <a href="{{ url_for('runsheet.clear_run_sheet') }}" class="run-action-button danger" onclick="return confirm('Are you sure you want to clear the entire run sheet?')">Clear Run Sheet</a>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    $('.region-table').each(function() {
+        if ($(this).find('tbody tr').length > 0) {
+            try {
+                $(this).DataTable({
+                    paging: false,
+                    searching: false,
+                    info: false,
+                    ordering: true,
+                    columnDefs: [
+                        { orderable: false, targets: -1 } // Disable sorting on Actions
+                    ]
+                });
+            } catch (e) {
+                console.error("Error initializing DataTable:", e);
+            }
+        }
+    });
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Customer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Company Logo" class="page-logo">
+
+    <div class="header-row">
+        <h1>Edit Customer</h1>
+        <a href="{{ url_for('customer.view_customer_database') }}" class="cancel-button">Cancel</a>
+    </div>
+
+    <div class="form-card">
+      <form action="{{ url_for('customer.update_customer', customer_id=customer[0]) }}" method="post">
+
+        <div class="form-grid">
+          <!-- Left Column -->
+          <div class="form-column">
+            <label>Customer Name</label>
+            <input type="text" name="customer_name" value="{{ customer[1] }}" required>
+
+            <label>Address</label>
+            <input type="text" name="address" value="{{ customer[2] }}" required>
+
+            <label>City</label>
+            <input type="text" name="city" value="{{ customer[3] }}" required>
+
+            <label>Province</label>
+            <select name="province" required>
+              <option value="QC" {% if customer[4] == 'QC' %}selected{% endif %}>QC</option>
+              <option value="ON" {% if customer[4] == 'ON' %}selected{% endif %}>ON</option>
+            </select>
+
+            <label>Postal Code</label>
+            <input type="text" name="postal_code" value="{{ customer[5] }}" required>
+
+            <label>Region</label>
+            <select name="region" required>
+              {% for region in ['North Shore', 'Montreal', 'South Shore', 'Ontario', 'Quebec', 'Beauce', 'Drummond', 'Sherbrooke'] %}
+              <option value="{{ region }}" {% if customer[6] == region %}selected{% endif %}>{{ region }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="submit-button">Save Changes</button>
+        </div>
+
+      </form>
+    </div>
+
+</div>
+
+</body>
+</html>
+

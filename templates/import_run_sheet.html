@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Import Run Sheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-color: #0d1117;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #1f2937;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            text-align: center;
+            width: 100%;
+            max-width: 480px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            margin: 20px 0;
+            padding: 10px;
+            background: #111827;
+            color: white;
+            border: 1px solid #374151;
+            border-radius: 8px;
+            width: 100%;
+        }
+
+        .home-button {
+            padding: 12px 20px;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .home-button:hover {
+            background-color: #2563eb;
+        }
+
+        .page-logo {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Company Logo" class="page-logo">
+    <h1>Import Run Sheet</h1>
+    <form action="{{ url_for('runsheet.import_run_sheet') }}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".xlsx" required>
+        <button type="submit" class="home-button">Upload and Import</button>
+    </form>
+</div>
+
+</body>
+</html>

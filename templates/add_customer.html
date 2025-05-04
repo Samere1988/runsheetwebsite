@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Customer to Run Sheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1c2533;
+            color: #fff;
+            padding: 30px;
+        }
+
+        .form-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #2b3548;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="time"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #1a202c;
+            color: #fff;
+        }
+
+        .button-row {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 10px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        .submit-btn {
+            background-color: #2d8cff;
+            color: #fff;
+        }
+
+        .cancel-btn {
+            background-color: #ff4c4c;
+            color: #fff;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #customerModal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-box {
+            background: #2b3548;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .modal-box input {
+            width: 250px;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background: #1a202c;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .modal-box button {
+            margin: 0 10px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="customerModal">
+    <div class="modal-box">
+        <h3>Enter Customer ID</h3>
+        <input type="text" id="modalCustomerId" placeholder="Customer ID">
+        <br>
+        <button onclick="lookupCustomer()" class="submit-btn">Lookup</button>
+        <button onclick="cancelModal()" class="cancel-btn">Cancel</button>
+    </div>
+</div>
+
+<div class="form-container" id="mainForm" style="display:none;">
+    <h2>Add Customer to Run Sheet</h2>
+    <form method="post">
+        <div class="form-row">
+            <div>
+                <label for="customer_id">Customer ID:</label>
+                <input type="text" name="customer_id" id="customer_id" required>
+            </div>
+            <div>
+                <label for="customer_name">Customer Name:</label>
+                <input type="text" name="customer_name" id="customer_name">
+            </div>
+            <div>
+                <label for="address">Address:</label>
+                <input type="text" name="address" id="address">
+            </div>
+            <div>
+                <label for="city">City:</label>
+                <input type="text" name="city" id="city">
+            </div>
+            <div>
+                <label for="province">Province:</label>
+                <select name="province" id="province">
+                    <option value="QC">QC</option>
+                    <option value="ON">ON</option>
+                </select>
+            </div>
+            <div>
+                <label for="postal_code">Postal Code:</label>
+                <input type="text" name="postal_code" id="postal_code">
+            </div>
+            <div>
+                <label for="region">Region:</label>
+                <select name="region" id="region">
+                    <option>North Shore</option>
+                    <option>Quebec</option>
+                    <option>Montreal</option>
+                    <option>Ontario</option>
+                    <option>Drummond</option>
+                    <option>Beauce</option>
+                    <option>South Shore</option>
+                    <option>Sherbrooke</option>
+                </select>
+            </div>
+            <div>
+                <label for="weight">Weight (lbs):</label>
+                <input type="number" name="weight" id="weight" value="0" min="0" oninput="this.value = Math.max(0, this.value)">
+            </div>
+
+            <div>
+                <label for="skids">Skids:</label>
+                <input type="number" name="skids" id="skids" value="0" min="0" oninput="this.value = Math.max(0, this.value)">
+            </div>
+
+            <div>
+                <label for="bundles">Bundles:</label>
+                <input type="number" name="bundles" id="bundles" value="0" min="0" oninput="this.value = Math.max(0, this.value)">
+            </div>
+
+            <div>
+                <label for="coils">Coils:</label>
+                <input type="number" name="coils" id="coils" value="0" min="0" oninput="this.value = Math.max(0, this.value)">
+            </div>
+
+            <div>
+                <label for="closing_time">Closing Time:</label>
+                <input type="time" name="closing_time" id="closing_time">
+            </div>
+            <div>
+                <label for="pickup">Pickup (Y/N):</label>
+                <select name="pickup" id="pickup">
+                    <option value="N">N</option>
+                    <option value="Y">Y</option>
+                </select>
+            </div>
+        </div>
+        <div class="button-row">
+            <button type="submit" class="submit-btn">Add to Run Sheet</button>
+            <a href="{{ url_for('home.home') }}"><button type="button" class="cancel-btn">Cancel</button></a>
+        </div>
+    </form>
+</div>
+
+<script>
+function cancelModal() {
+    window.location.href = "{{ url_for('home.home') }}";
+}
+
+function lookupCustomer() {
+    const id = document.getElementById("modalCustomerId").value;
+
+    fetch(`/lookup_customer/${id}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert("Customer ID not found");
+                return;
+            }
+
+            // Auto-fill form fields with data from the server
+            document.getElementById('customer_name').value = data['Customer Name'] || '';
+            document.getElementById('city').value = data['City'] || '';
+            document.getElementById('province').value = data['Province'] || '';
+            document.getElementById('region').value = data['Region'] || '';
+            document.getElementById('address').value = data['Address'] || '';
+            document.getElementById('postal_code').value = data['Postal Code'] || '';
+            document.getElementById('customer_id').value = id;
+
+
+            // Hide modal and show form
+            document.getElementById("customerModal").style.display = "none";
+            document.getElementById("mainForm").style.display = "block";
+        })
+        .catch(error => {
+            console.error("Error during customer lookup:", error);
+            alert("There was an error looking up the customer.");
+        });
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+

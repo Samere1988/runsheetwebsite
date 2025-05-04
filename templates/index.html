@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Run Sheet Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="homepage">
+
+<div class="container">
+    <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Company Logo" class="page-logo">
+
+    <h1>Run Sheet Management</h1>
+
+    <div class="home-grid">
+        <form action="{{ url_for('runsheet.add_customer') }}" method="get" class="home-card">
+            <button type="submit" class="home-button">Add Customer</button>
+        </form>
+        <form action="{{ url_for('runsheet.view_run_sheet') }}" method="get" class="home-card">
+            <button type="submit" class="home-button">View Run Sheet</button>
+        </form>
+        <form action="{{ url_for('runsheet.save_run_sheet') }}" method="get" class="home-card">
+            <button type="submit" class="home-button">Save Run Sheet</button>
+        </form>
+        <form action="{{ url_for('runsheet.import_run_sheet') }}" method="get" class="home-card">
+            <button type="submit" class="home-button">Import Run Sheet</button>
+        </form>
+        <form action="{{ url_for('runsheet.clear_run_sheet') }}" method="get" class="home-card">
+            <button type="submit" class="home-button">Clear Run Sheet</button>
+        </form>
+        <form action="{{ url_for('customer.view_customer_database') }}" method="get" class="home-card">
+            <button type="submit" class="home-button">View Customer Database</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
