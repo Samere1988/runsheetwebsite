@@ -2,63 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Customer</title>
+    <title>Add Customer to Run Sheet</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
 
 <div class="container">
-
     <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Company Logo" class="page-logo">
+    <h1>Add Customer to Run Sheet</h1>
 
-    <div class="header-row">
-        <h1>Edit Customer</h1>
-        <a href="{{ url_for('customer.view_customer_database') }}" class="cancel-button">Cancel</a>
+    <!-- Customer ID Popup Modal -->
+    {% if not customer %}
+    <div id="customerIdModal" class="modal">
+      <div class="modal-content">
+        <h2>Enter Customer ID</h2>
+        <input type="text" id="customerIdInput" placeholder="Customer ID" autofocus>
+        <div class="modal-buttons">
+          <button onclick="continueToForm()" class="modal-button continue">Continue</button>
+          <button onclick="cancelForm()" class="modal-button cancel">Cancel</button>
+        </div>
+      </div>
     </div>
+    {% endif %}
 
-    <div class="form-card">
-      <form action="{{ url_for('customer.update_customer', customer_id=customer[0]) }}" method="post">
-
+    <!-- Add Customer Form -->
+    <div class="form-card" id="addCustomerForm" style="display: {{ 'block' if customer else 'none' }};">
+      <form method="POST" action="{{ url_for('runsheet.add_customer') }}">
         <div class="form-grid">
           <!-- Left Column -->
           <div class="form-column">
+            <label>Customer ID</label>
+            <input type="text" name="customer_id" required {% if customer %}readonly{% endif %} value="{{ customer['Customer ID'] if customer else '' }}">
             <label>Customer Name</label>
-            <input type="text" name="customer_name" value="{{ customer[1] }}" required>
-
+            <input type="text" name="customer_name" required value="{{ customer['Customer Name'] if customer else '' }}">
             <label>Address</label>
-            <input type="text" name="address" value="{{ customer[2] }}" required>
-
+            <input type="text" name="address" required value="{{ customer['Address'] if customer else '' }}">
             <label>City</label>
-            <input type="text" name="city" value="{{ customer[3] }}" required>
-
+            <input type="text" name="city" required value="{{ customer['City'] if customer else '' }}">
             <label>Province</label>
             <select name="province" required>
-              <option value="QC" {% if customer[4] == 'QC' %}selected{% endif %}>QC</option>
-              <option value="ON" {% if customer[4] == 'ON' %}selected{% endif %}>ON</option>
+              <option value="QC" {% if customer and customer['Province'] == 'QC' %}selected{% endif %}>QC</option>
+              <option value="ON" {% if customer and customer['Province'] == 'ON' %}selected{% endif %}>ON</option>
             </select>
-
-            <label>Postal Code</label>
-            <input type="text" name="postal_code" value="{{ customer[5] }}" required>
-
             <label>Region</label>
             <select name="region" required>
-              {% for region in ['North Shore', 'Montreal', 'South Shore', 'Ontario', 'Quebec', 'Beauce', 'Drummond', 'Sherbrooke'] %}
-              <option value="{{ region }}" {% if customer[6] == region %}selected{% endif %}>{{ region }}</option>
+              {% for r in ['North Shore', 'Montreal', 'South Shore', 'Ontario', 'Quebec', 'Beauce', 'Drummond', 'Sherbrooke'] %}
+              <option value="{{ r }}" {% if customer and customer['Region'] == r %}selected{% endif %}>{{ r }}</option>
               {% endfor %}
+            </select>
+            <label>Postal Code</label>
+            <input type="text" name="postal_code" value="{{ customer['Postal Code'] if customer else '' }}">
+          </div>
+
+          <!-- Right Column -->
+          <div class="form-column">
+            <label>Weight (lbs)</label>
+            <input type="number" name="weight" value="0" min="0" required>
+            <label>Skids</label>
+            <input type="number" name="skids" value="0" min="0" required>
+            <label>Bundles</label>
+            <input type="number" name="bundles" value="0" min="0" required>
+            <label>Coils</label>
+            <input type="number" name="coils" value="0" min="0" required>
+            <label>Closing Time</label>
+            <input type="time" name="closing_time">
+            <label>Comment</label>
+            <input type="text" name="comment" value="{{ vendor.customer_id}}">
+            <label>Pickup (Y/N)</label>
+            <select name="pickup" required>
+              <option value="N">N</option>
+              <option value="Y">Y</option>
             </select>
           </div>
         </div>
 
         <div class="form-submit">
-          <button type="submit" class="submit-button">Save Changes</button>
+          <button type="submit" class="submit-button">{{ 'Update Customer' if customer else 'Add Customer' }}</button>
         </div>
 
       </form>
     </div>
-
 </div>
+
+<!-- Scripts -->
+<script>
+function continueToForm() {
+    var id = document.getElementById('customerIdInput').value.trim();
+    if (id.length > 0) {
+        document.getElementById('customerIdModal').style.display = 'none';
+        document.getElementById('addCustomerForm').style.display = 'block';
+        document.querySelector('input[name="customer_id"]').value = id;
+
+        // Lookup customer
+        fetch('/lookup_customer', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ customer_id: id })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.found) {
+                document.querySelector('input[name="customer_name"]').value = data.customer_name;
+                document.querySelector('input[name="address"]').value = data.address;
+                document.querySelector('input[name="city"]').value = data.city;
+                document.querySelector('select[name="province"]').value = data.province;
+                document.querySelector('select[name="region"]').value = data.region;
+                document.querySelector('input[name="postal_code"]').value = data.postal_code;
+            }
+        })
+        .catch(error => {
+            console.error('Error during lookup:', error);
+        });
+
+    } else {
+        alert("Please enter a Customer ID!");
+    }
+}
+
+function cancelForm() {
+    window.location.href = "{{ url_for('home.home') }}";
+}
+
+window.onload = function() {
+    {% if not customer %}
+    document.getElementById('customerIdModal').style.display = 'flex';
+    {% else %}
+    document.getElementById('addCustomerForm').style.display = 'block';
+    {% endif %}
+};
+</script>
 
 </body>
 </html>
+
 

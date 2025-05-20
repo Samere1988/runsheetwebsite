@@ -5,6 +5,62 @@
     <title>Run Sheet Manager</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body.homepage {
+            background-color: #0d1117;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #161b22;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-logo {
+            max-width: 120px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .home-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .home-card {
+            width: 100%;
+        }
+
+        .homepage-button {
+            width: 100%;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #1f6feb;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .homepage-button:hover {
+            background-color: #388bfd;
+        }
+    </style>
 </head>
 <body class="homepage">
 
@@ -13,30 +69,61 @@
 
     <h1>Run Sheet Management</h1>
 
+    <!-- Flash Message Block -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div style="margin: 20px auto; padding: 15px; border-radius: 10px; background: #28a745; color: white; text-align: center; max-width: 800px;">
+          {% for message in messages %}
+            <p style="margin: 0;">{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
     <div class="home-grid">
         <form action="{{ url_for('runsheet.add_customer') }}" method="get" class="home-card">
-            <button type="submit" class="home-button">Add Customer</button>
+            <button type="submit" class="homepage-button">Add Customer</button>
+        </form>
+        <form action="{{ url_for('pickup.add_pickups') }}" method="get" class="home-card">
+            <button type="submit" class="homepage-button">Add Pickups</button>
         </form>
         <form action="{{ url_for('runsheet.view_run_sheet') }}" method="get" class="home-card">
-            <button type="submit" class="home-button">View Run Sheet</button>
+            <button type="submit" class="homepage-button">View Run Sheet</button>
         </form>
         <form action="{{ url_for('runsheet.save_run_sheet') }}" method="get" class="home-card">
-            <button type="submit" class="home-button">Save Run Sheet</button>
+            <button type="submit" class="homepage-button">Save Run Sheet</button>
         </form>
         <form action="{{ url_for('runsheet.import_run_sheet') }}" method="get" class="home-card">
-            <button type="submit" class="home-button">Import Run Sheet</button>
+            <button type="submit" class="homepage-button">Import Run Sheet</button>
         </form>
         <form action="{{ url_for('runsheet.clear_run_sheet') }}" method="get" class="home-card">
-            <button type="submit" class="home-button">Clear Run Sheet</button>
+            <button type="submit" class="homepage-button">Clear Run Sheet</button>
         </form>
         <form action="{{ url_for('customer.view_customer_database') }}" method="get" class="home-card">
-            <button type="submit" class="home-button">View Customer Database</button>
+            <button type="submit" class="homepage-button">View Customer Database</button>
         </form>
+        <form action="{{ url_for('incoming.view_incoming_material') }}" method="get" class="home-card">
+            <button type="submit" class="homepage-button">PO & Logistics Log</button>
+        </form>
+        <form action="{{ url_for('incoming.view_incoming_unreceived') }}" method="get" class="home-card">
+            <button type="submit" class="homepage-button">Incoming</button>
+        </form>
+        <form action="{{ url_for('incoming.view_incoming_containers') }}" method="get" class="home-card">
+            <button type="submit" class="homepage-button">Incoming Containers</button>
+        </form>
+        <form action="/dash_statistics/" method="get" class="home-card">
+            <button type="submit" class="homepage-button">📊 Statistics</button>
+        </form>
+
+
+
+
     </div>
 </div>
 
 </body>
 </html>
+
 
 
 

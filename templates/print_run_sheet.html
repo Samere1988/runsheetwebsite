@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Print Run Sheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: landscape;
+                margin: 1cm;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 9px;
+                color: #000;
+                background: #fff;
+            }
+
+            .region-print-page {
+                page-break-after: always;
+                width: 100%;
+            }
+
+            .print-logo {
+                width: 180px;
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                margin: 0;
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 11px;
+                margin: 5px 0 10px 0;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                table-layout: fixed;
+            }
+
+            th, td {
+                border: 1px solid #444;
+                padding: 4px;
+                font-size: 9px;
+                text-align: center;
+                word-wrap: break-word;
+            }
+
+            th {
+                background-color: #eee;
+            }
+
+            .print-total-row td {
+                font-weight: bold;
+                background-color: #f3f3f3;
+            }
+
+            th:nth-child(1), td:nth-child(1) { width: 22%; text-align: left; }
+            th:nth-child(2), td:nth-child(2) { width: 16%; text-align: left; }
+            th:nth-child(3), td:nth-child(3) { width: 9%; }
+            th:nth-child(4), td:nth-child(4) { width: 7%; }
+            th:nth-child(5), td:nth-child(5) { width: 7%; }
+            th:nth-child(6), td:nth-child(6) { width: 6%; }
+            th:nth-child(7), td:nth-child(7) { width: 8%; }
+            th:nth-child(8), td:nth-child(8) { width: 7%; }
+        }
+
+        body {
+            padding: 30px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .region-print-page {
+            margin-bottom: 50px;
+        }
+
+        .print-logo {
+            width: 180px;
+        }
+
+        h2 {
+            margin-bottom: 0;
+        }
+
+        p {
+            margin-top: 4px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+{% for region, customers in region_data.items() if customers %}
+<div class="region-print-page">
+    <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo" class="print-logo">
+    <h2>{{ region }}</h2>
+    <p><strong>Driver:</strong> {{ driver_info.get(region, {}).get('name', '') }}</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Customer Name</th>
+                <th>City</th>
+                <th>Weight</th>
+                <th>Skids</th>
+                <th>Bundles</th>
+                <th>Coils</th>
+                <th>Closing</th>
+                <th>Pickup</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in customers %}
+            <tr>
+                <td>{{ entry['Customer Name'] }}</td>
+                <td>{{ entry['City'] }}</td>
+                <td>{{ entry['Weight'] }}</td>
+                <td>{{ entry['Skids'] }}</td>
+                <td>{{ entry['Bundles'] }}</td>
+                <td>{{ entry['Coils'] }}</td>
+                <td>{{ entry['Closing Time'] }}</td>
+                <td>{{ entry['Pickup'] }}</td>
+            </tr>
+            {% endfor %}
+            <tr class="print-total-row">
+                <td colspan="2" style="text-align:right;">Totals:</td>
+                <td>{{ region_totals[region]['Weight'] }}</td>
+                <td>{{ region_totals[region]['Skids'] }}</td>
+                <td>{{ region_totals[region]['Bundles'] }}</td>
+                <td>{{ region_totals[region]['Coils'] }}</td>
+                <td colspan="2"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endfor %}
+
+</body>
+</html>
+
+

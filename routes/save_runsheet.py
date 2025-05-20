@@ -1,5 +1,5 @@
-import openpyxl
-from openpyxl.styles import Alignment, Border, Side, Font
+from openpyxl import Workbook
+from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
 from openpyxl.utils import get_column_letter
 import sqlite3
 import os
@@ -7,137 +7,167 @@ from datetime import datetime, timedelta
 
 DATABASE_PATH = 'databases/Run Sheet Database.db'
 
-def save_run_sheet_to_excel():
-    def is_valid_number(value):
-        return value not in (None, '', ' ')
+region_colors = {
+    'North Shore': 'F79646',
+    'Quebec': '4F81BD',
+    'Montreal': 'C0504D',
+    'Ontario': '000000',
+    'Sherbrooke': '00B0F0',
+    'South Shore': '8064A2',
+    'Beauce': 'FFC0CB',        # Pink instead of yellow
+    'Drummond': '9BBB59',
+}
 
+region_layout = {
+    'North Shore': ('A1', 'B1'),
+    'Quebec': ('A20', 'B20'),
+    'Montreal': ('A39', 'B39'),
+    'Ontario': ('A58', 'B58'),
+    'Drummond': ('K1', 'L1'),
+    'Beauce': ('K20', 'L20'),
+    'South Shore': ('K39', 'L39'),
+    'Sherbrooke': ('K58', 'L58'),
+}
+
+headers = ["Customer ID", "Customer Name", "City", "Weight", "Skids", "Bundles", "Coils", "Closing Time", "Pickup"]
+header_font = Font(bold=True, color="FFFFFF")
+border = Border(
+    left=Side(style='thin'), right=Side(style='thin'),
+    top=Side(style='thin'), bottom=Side(style='thin')
+)
+
+
+def get_latest_runsheet_filename():
+    today = datetime.today()
+    if today.weekday() == 4:  # Friday
+        run_date = today.replace(day=today.day + 3)
+    else:
+        run_date = today.replace(day=today.day + 1)
+
+    filename = run_date.strftime("%A").upper() + f" RUN SHEET {run_date:%m.%d.%Y}.xlsx"
+    folder = run_date.strftime("%B %Y")
+    return filename, folder
+
+def save_run_sheet_to_excel():
     connection = sqlite3.connect(DATABASE_PATH)
     connection.row_factory = sqlite3.Row
     cursor = connection.cursor()
+
     cursor.execute("SELECT * FROM 'Run Sheet'")
-    runsheet = cursor.fetchall()
+    entries = cursor.fetchall()
+
+    try:
+        cursor.execute("SELECT * FROM Drivers")
+        drivers = {row["Region"]: row["Name"] for row in cursor.fetchall()}
+    except:
+        drivers = {}
+
     connection.close()
 
-    wb = openpyxl.Workbook()
+    region_data = {region: [] for region in region_layout}
+    for row in entries:
+        region = row['Region']
+        if region in region_data:
+            region_data[region].append(row)
+
+    wb = Workbook()
     ws = wb.active
     ws.title = "Run Sheet"
 
-    NUM_ROWS_PER_REGION = 19
-    NUM_COLUMNS = 9
-    COLUMN_WIDTHS = [15, 25, 20, 12, 10, 10, 10, 12, 10]
+    for region, (start_cell, driver_cell) in region_layout.items():
+        start_col = ord(start_cell[0].upper()) - ord('A') + 1
+        start_row = int(start_cell[1:])
+        driver_col = ord(driver_cell[0].upper()) - ord('A') + 1
 
-    region_layout = {
-        "North Shore": (2, 1),
-        "Quebec": (22, 1),
-        "Montreal": (42, 1),
-        "Ontario": (62, 1),
-        "Drummond": (2, 12),
-        "Beauce": (22, 12),
-        "South Shore": (42, 12),
-        "Sherbrooke": (62, 12)
-    }
+        # Region name
+        region_cell = ws.cell(row=start_row, column=start_col, value=f"Region: {region}")
+        region_cell.font = Font(bold=True, color=region_colors[region])
+        region_cell.alignment = Alignment(horizontal="left")
 
-    regions = list(region_layout.keys())
+        # Driver name
+        ws.cell(row=start_row, column=driver_col, value=drivers.get(region, "____________________"))
 
-    for col_idx, width in enumerate(COLUMN_WIDTHS, start=1):
-        ws.column_dimensions[get_column_letter(col_idx)].width = width
-        ws.column_dimensions[get_column_letter(col_idx + 11)].width = width
+        # Headers
+        for i, header in enumerate(headers):
+            cell = ws.cell(row=start_row + 1, column=start_col + i, value=header)
+            cell.font = header_font
+            cell.fill = PatternFill(start_color="333333", end_color="333333", fill_type='solid')
+            cell.alignment = Alignment(horizontal="center")
+            cell.border = border
 
-    thin_border = Border(left=Side(style='thin'),
-                         right=Side(style='thin'),
-                         top=Side(style='thin'),
-                         bottom=Side(style='thin'))
+        region_rows = region_data[region]
 
-    region_data = {region: [] for region in regions}
-    for entry in runsheet:
-        region_data[entry['Region']].append(entry)
+        # Data rows
+        for r, row in enumerate(region_rows):
+            for c, key in enumerate(headers):
+                val = row[key]
+                cell = ws.cell(row=start_row + 2 + r, column=start_col + c, value=val)
+                cell.alignment = Alignment(horizontal="center")
+                cell.border = border
 
-    for region, (start_row, start_col) in region_layout.items():
-        col_offset = start_col - 1
-        row_offset = start_row - 1
+        # Fill blank rows (up to row 18)
+        for r in range(len(region_rows), 16):
+            for c in range(len(headers)):
+                cell = ws.cell(row=start_row + 2 + r, column=start_col + c)
+                cell.border = border
+                cell.alignment = Alignment(horizontal="center")
 
-        ws.merge_cells(start_row=start_row, start_column=start_col, end_row=start_row, end_column=start_col + 8)
-        title_cell = ws.cell(row=start_row, column=start_col)
-        title_cell.value = f"{region} - DRIVER:"
-        title_cell.font = Font(bold=True)
-        title_cell.alignment = Alignment(horizontal='center')
-
-        headers = ["Customer ID", "Customer Name", "City", "Region", "Weight (lbs)", "Skids", "Bundles", "Coils", "Closing Time"]
-        for idx, header in enumerate(headers):
-            cell = ws.cell(row=start_row + 1, column=start_col + idx)
-            cell.value = header
+        # Totals in row 19
+        total_row = start_row + 18
+        ws.cell(row=total_row, column=start_col + 2, value="Totals:").alignment = Alignment(horizontal="right")
+        for offset, key in enumerate(["Weight", "Skids", "Bundles", "Coils"]):
+            col = start_col + 3 + offset
+            total = sum(float(r[key]) if r[key] not in [None, ""] else 0 for r in region_rows)
+            cell = ws.cell(row=total_row, column=col, value=round(total))
             cell.font = Font(bold=True)
-            cell.alignment = Alignment(horizontal='center')
+            cell.border = border
+            cell.alignment = Alignment(horizontal="center")
 
-        customers = region_data.get(region, [])[:16]
-        for i, entry in enumerate(customers):
-            ws.cell(row=start_row + 2 + i, column=start_col + 0).value = entry['Customer ID']
-            ws.cell(row=start_row + 2 + i, column=start_col + 1).value = entry['Customer Name']
-            ws.cell(row=start_row + 2 + i, column=start_col + 2).value = entry['City']
-            ws.cell(row=start_row + 2 + i, column=start_col + 3).value = entry['Region']
+        # Auto-fit columns for all 19 rows
+        for col in range(1, 20):  # Columns A (1) to S (19)
+            max_len = 0
+            for row in range(1, 77):  # Rows 1 to 76 inclusive
+                cell = ws.cell(row=row, column=col)
+                val = str(cell.value) if cell.value is not None else ""
+                max_len = max(max_len, len(val))
 
-            if is_valid_number(entry['Weight']):
-                ws.cell(row=start_row + 2 + i, column=start_col + 4).value = float(entry['Weight'])
-            if is_valid_number(entry['Skids']):
-                ws.cell(row=start_row + 2 + i, column=start_col + 5).value = int(float(entry['Skids']))
-            if is_valid_number(entry['Bundles']):
-                ws.cell(row=start_row + 2 + i, column=start_col + 6).value = int(float(entry['Bundles']))
-            if is_valid_number(entry['Coils']):
-                ws.cell(row=start_row + 2 + i, column=start_col + 7).value = int(float(entry['Coils']))
+            col_letter = get_column_letter(col)
+            ws.column_dimensions[col_letter].width = max(max_len + 2, 8)  # Padding + minimum width
 
-            ws.cell(row=start_row + 2 + i, column=start_col + 8).value = entry['Closing Time']
+    # Save to Desktop and Backups
+    filename, folder = get_latest_runsheet_filename()
+    desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")
+    os.makedirs(desktop_path, exist_ok=True)
+    wb.save(os.path.join(desktop_path, filename))
 
-        total_weight = sum(float(e['Weight']) for e in customers if is_valid_number(e['Weight']))
-        total_skids = sum(int(float(e['Skids'])) for e in customers if is_valid_number(e['Skids']))
-        total_bundles = sum(int(float(e['Bundles'])) for e in customers if is_valid_number(e['Bundles']))
-        total_coils = sum(int(float(e['Coils'])) for e in customers if is_valid_number(e['Coils']))
+    backup_dir = os.path.join(os.getcwd(), "backups", folder)
+    os.makedirs(backup_dir, exist_ok=True)
+    wb.save(os.path.join(backup_dir, filename))
+    save_totals_to_db(region_data)
 
-        ws.cell(row=start_row + 18, column=start_col + 3).value = "Totals:"
-        ws.cell(row=start_row + 18, column=start_col + 4).value = total_weight
-        ws.cell(row=start_row + 18, column=start_col + 5).value = total_skids
-        ws.cell(row=start_row + 18, column=start_col + 6).value = total_bundles
-        ws.cell(row=start_row + 18, column=start_col + 7).value = total_coils
 
-        for r in range(start_row, start_row + NUM_ROWS_PER_REGION):
-            for c in range(start_col, start_col + NUM_COLUMNS):
-                ws.cell(row=r, column=c).border = thin_border
 
-    today = datetime.now()
-    if today.weekday() == 4:
-        target_date = today + timedelta(days=3)
-    elif today.weekday() >= 5:
-        target_date = today + timedelta(days=(7 - today.weekday()))
-    else:
-        target_date = today + timedelta(days=1)
+def save_totals_to_db(region_data):
+    total_weight = total_skids = total_bundles = total_coils = 0
 
-    day_name = target_date.strftime('%A').upper()
-    file_date = target_date.strftime('%m.%d.%Y')
-    filename = f"{day_name} RUN SHEET {file_date}.xlsx"
-    month_year_folder = target_date.strftime('%B %Y').upper()
+    def parse_num(val):
+        try:
+            return float(val)
+        except (ValueError, TypeError):
+            return 0
 
-    backup_base_dir = os.path.join(os.getcwd(), 'backups')
-    backup_folder = os.path.join(backup_base_dir, month_year_folder)
+    for customers in region_data.values():
+        for entry in customers:
+            total_weight += parse_num(entry['Weight'])
+            total_skids += parse_num(entry['Skids'])
+            total_bundles += parse_num(entry['Bundles'])
+            total_coils += parse_num(entry['Coils'])
 
-    if not os.path.exists(backup_folder):
-        os.makedirs(backup_folder)
-
-    backup_path = os.path.join(backup_folder, filename)
-    wb.save(backup_path)
-
-    return backup_path
-
-def get_latest_runsheet_filename():
-    today = datetime.now()
-    if today.weekday() == 4:
-        target_date = today + timedelta(days=3)
-    elif today.weekday() >= 5:
-        target_date = today + timedelta(days=(7 - today.weekday()))
-    else:
-        target_date = today + timedelta(days=1)
-
-    day_name = target_date.strftime('%A').upper()
-    file_date = target_date.strftime('%m.%d.%Y')
-    filename = f"{day_name} RUN SHEET {file_date}.xlsx"
-    month_year_folder = target_date.strftime('%B %Y').upper()
-    return filename, month_year_folder
-
+    conn = sqlite3.connect(DATABASE_PATH)
+    c = conn.cursor()
+    c.execute("""
+        INSERT INTO RunSheetTotals (date, total_weight, total_skids, total_bundles, total_coils)
+        VALUES (?, ?, ?, ?, ?)
+    """, (datetime.today().strftime('%Y-%m-%d'), total_weight, total_skids, total_bundles, total_coils))
+    conn.commit()
+    conn.close()

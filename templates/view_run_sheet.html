@@ -15,9 +15,21 @@
     <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Company Logo" class="page-logo">
 
     <div class="header-row no-print">
-        <h1 class="page-title">Today's Run Sheet</h1>
-        <div class="print-icon" onclick="window.print();">🖨️</div>
+        <a href="{{ url_for('home.home') }}" class="homevs-button no-print">🏠 Home</a>
+        <h1 class="page-title">Run Sheet</h1>
+        <button class="print-button no-print" onclick="printHiddenRunSheet()">🖨️ Print</button>
+
     </div>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="no-print" style="margin: 20px auto; padding: 15px; border-radius: 10px; background: #28a745; color: white; text-align: center; max-width: 1000px;">
+          {% for message in messages %}
+            <p style="margin: 0;">{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
 
     <div class="region-wrapper">
         {% for region, customers in region_data.items() %}
@@ -25,19 +37,17 @@
             <div class="region-header">
                 <span class="region-title">{{ region }}</span>
                 <div class="region-meta">
-                    <span><strong>Driver:</strong> {{ driver_info.get(region, {}).get('name', '____________________') }}</span>
-                    <span><strong>Start Time:</strong> {{ driver_info.get(region, {}).get('start_time', '________________') }}</span>
+                    <span><strong>Driver:</strong> {{ driver_info.get(region, {}).get('name', '') }}</span>
                 </div>
             </div>
             <div class="region-table-wrapper">
                 {% if customers %}
-                <table class="region-table" id="table_{{ loop.index }}">
+                <table class="region-table display" id="table_{{ loop.index }}">
                     <thead>
                         <tr>
                             <th>Customer ID</th>
                             <th>Customer Name</th>
                             <th>City</th>
-                            <th>Region</th>
                             <th>Weight (lbs)</th>
                             <th>Skids</th>
                             <th>Bundles</th>
@@ -50,25 +60,40 @@
                     <tbody>
                         {% for entry in customers %}
                         <tr>
-                            <td>{{ entry['Customer ID'] or '' }}</td>
-                            <td>{{ entry['Customer Name'] or '' }}</td>
-                            <td>{{ entry['City'] or '' }}</td>
-                            <td>{{ entry['Region'] or '' }}</td>
-                            <td>{{ entry['Weight'] or '' }}</td>
-                            <td>{{ entry['Skids'] or '' }}</td>
-                            <td>{{ entry['Bundles'] or '' }}</td>
-                            <td>{{ entry['Coils'] or '' }}</td>
-                            <td>{{ entry['Closing Time'] or '' }}</td>
-                            <td>{{ entry['Pickup'] or '' }}</td>
-                            <td class="no-print">
-                                <form action="{{ url_for('runsheet.delete_run_customer') }}" method="post" style="display:inline-block;">
-                                    <input type="hidden" name="id" value="{{ entry['id'] if 'id' in entry else '' }}">
-                                    <input type="hidden" name="customer_id" value="{{ entry['Customer ID'] or '' }}">
-                                    <input type="hidden" name="region" value="{{ entry['Region'] or '' }}">
-                                    <button class="run-action-button danger" type="submit">Delete</button>
+                            <td>{{ entry['Customer ID'] }}</td>
+                            <td>{{ entry['Customer Name'] }}</td>
+                            <td>{{ entry['City'] }}</td>
+                            <td><span>{{ entry['Weight'] }}</span><input type="number" name="weight" class="edit-field" value="{{ entry['Weight'] }}" hidden></td>
+                            <td><span>{{ entry['Skids'] }}</span><input type="number" name="skids" class="edit-field" value="{{ entry['Skids'] }}" hidden></td>
+                            <td><span>{{ entry['Bundles'] }}</span><input type="number" name="bundles" class="edit-field" value="{{ entry['Bundles'] }}" hidden></td>
+                            <td><span>{{ entry['Coils'] }}</span><input type="number" name="coils" class="edit-field" value="{{ entry['Coils'] }}" hidden></td>
+                            <td><span>{{ entry['Closing Time'] }}</span><input type="time" name="closing_time" class="edit-field" value="{{ entry['Closing Time'] }}" hidden></td>
+                            <td>
+                                <span>{{ entry['Pickup'] }}</span>
+                                <select name="pickup" class="edit-field" hidden>
+                                    <option value="N" {% if entry['Pickup'] == 'N' %}selected{% endif %}>N</option>
+                                    <option value="Y" {% if entry['Pickup'] == 'Y' %}selected{% endif %}>Y</option>
+                                </select>
+                            </td>
+                            <td class="action-buttons no-print">
+                                <form action="{{ url_for('runsheet.update_run_entry') }}" method="post" class="inline-edit-form" style="display:inline;">
+                                    <input type="hidden" name="customer_id" value="{{ entry['Customer ID'] }}">
+                                    <input type="hidden" name="region" value="{{ entry['Region'] }}">
+                                    <input type="hidden" name="skids">
+                                    <input type="hidden" name="bundles">
+                                    <input type="hidden" name="coils">
+                                    <input type="hidden" name="weight">
+                                    <input type="hidden" name="closing_time">
+                                    <input type="hidden" name="pickup">
+
+                                    <button type="button" class="edit-button edit-btn">Edit</button>
+                                    <button type="submit" class="save-button save-btn" hidden>✔ Save</button>
+                                    <button type="button" class="cancel-button cancel-btn" hidden>Cancel</button>
                                 </form>
-                                <form action="{{ url_for('runsheet.edit_run_customer', customer_id=entry['Customer ID'] or '') }}" method="get" style="display:inline-block;">
-                                    <button class="run-action-button" type="submit">Edit</button>
+                                <form action="{{ url_for('runsheet.delete_run_customer') }}" method="post" style="display:inline;">
+                                    <input type="hidden" name="customer_id" value="{{ entry['Customer ID'] }}">
+                                    <input type="hidden" name="region" value="{{ entry['Region'] }}">
+                                    <button class="delete-button" type="submit" onclick="return confirm('Delete this customer from the run sheet?')">Delete</button>
                                 </form>
                             </td>
                         </tr>
@@ -76,7 +101,6 @@
                     </tbody>
                     <tfoot>
                         <tr style="font-weight:bold;">
-                            <td></td>
                             <td></td>
                             <td></td>
                             <td style="text-align:right;">Totals:</td>
@@ -89,6 +113,7 @@
                             <td class="no-print"></td>
                         </tr>
                     </tfoot>
+
                 </table>
                 {% else %}
                 <div class="no-customers">No customers in this region</div>
@@ -97,17 +122,13 @@
         </div>
         {% endfor %}
     </div>
-
-    <div class="button-row no-print" style="margin-top: 20px; text-align: center;">
-        <a href="{{ url_for('home.home') }}" class="run-action-button">Back to Home</a>
-        <a href="{{ url_for('runsheet.save_run_sheet') }}" class="run-action-button">Save as Excel</a>
-        <a href="{{ url_for('runsheet.clear_run_sheet') }}" class="run-action-button danger" onclick="return confirm('Are you sure you want to clear the entire run sheet?')">Clear Run Sheet</a>
-    </div>
 </div>
 
+<iframe id="printFrame" src="" style="display:none;"></iframe>
+
 <script>
-$(document).ready(function() {
-    $('.region-table').each(function() {
+$(document).ready(function () {
+    $('.region-table').each(function () {
         if ($(this).find('tbody tr').length > 0) {
             try {
                 $(this).DataTable({
@@ -115,20 +136,63 @@ $(document).ready(function() {
                     searching: false,
                     info: false,
                     ordering: true,
-                    columnDefs: [
-                        { orderable: false, targets: -1 } // Disable sorting on Actions
-                    ]
+                    columnDefs: [{ orderable: false, targets: -1 }]
                 });
             } catch (e) {
                 console.error("Error initializing DataTable:", e);
             }
         }
     });
+
+    document.querySelectorAll('.edit-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const row = btn.closest('tr');
+            row.querySelectorAll('span').forEach(el => el.style.display = 'none');
+            row.querySelectorAll('.edit-field').forEach(el => el.hidden = false);
+            btn.style.display = 'none';
+            row.querySelector('.save-btn').hidden = false;
+            row.querySelector('.cancel-btn').hidden = false;
+        });
+    });
+
+    document.querySelectorAll('.cancel-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const row = btn.closest('tr');
+            row.querySelectorAll('span').forEach(el => el.style.display = '');
+            row.querySelectorAll('.edit-field').forEach(el => el.hidden = true);
+            row.querySelector('.edit-btn').style.display = '';
+            row.querySelector('.save-btn').hidden = true;
+            row.querySelector('.cancel-btn').hidden = true;
+        });
+    });
+
+    document.querySelectorAll('.inline-edit-form').forEach(form => {
+        form.addEventListener('submit', (e) => {
+            const row = form.closest('tr');
+            ['skids', 'bundles', 'coils', 'weight', 'closing_time', 'pickup'].forEach(field => {
+                form.querySelector(`input[name="${field}"]`).value = row.querySelector(`[name="${field}"]`).value;
+            });
+        });
+    });
 });
+</script>
+
+<script>
+function printHiddenRunSheet() {
+    const frame = document.getElementById('printFrame');
+    frame.onload = () => {
+        setTimeout(() => {
+            frame.contentWindow.focus();
+            frame.contentWindow.print();
+        }, 500);
+    };
+    frame.src = "{{ url_for('runsheet.print_run_sheet') }}";
+}
 </script>
 
 </body>
 </html>
+
 
 
 

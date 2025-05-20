@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Pickups</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-color: #0d1117;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .pickup-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .pickup-button {
+            background-color: #1f6feb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .pickup-button:hover {
+            background-color: #388bfd;
+        }
+
+        .action-button {
+            padding: 6px 12px;
+            margin: 0 2px;
+            font-size: 14px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .edit-button {
+            background-color: #f0ad4e;
+            color: white;
+        }
+
+        .delete-button {
+            background-color: #d9534f;
+            color: white;
+        }
+
+        .add-run-sheet-button {
+            background-color: #5cb85c;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Pickups to Run Sheet</h1>
+
+    <div class="pickup-buttons">
+        <form action="/">
+            <button type="submit" class="pickup-button">Home</button>
+        </form>
+        <form action="/add_vendor_form">
+            <button type="submit" class="pickup-button">Add Vendor</button>
+        </form>
+    </div>
+
+    <table id="pickup_table" class="display">
+        <thead>
+            <tr>
+                <th>Comment</th>
+                <th>Vendor Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Region</th>
+                <th>Province</th>
+                <th>Postal Code</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pickup in pickups %}
+            <tr>
+                <td>{{ pickup.customer_id or ''}}</td>
+                <td>{{ pickup.vendor_name }}</td>
+                <td>{{ pickup.address }}</td>
+                <td>{{ pickup.city }}</td>
+                <td>{{ pickup.region }}</td>
+                <td>{{ pickup.province }}</td>
+                <td>{{ pickup.postal_code }}</td>
+                <td>
+                    <button class="action-button edit-button" onclick="editVendor('{{ pickup.id }}')">Edit</button>
+                    <button class="action-button delete-button" onclick="deleteVendor('{{ pickup.id }}')">Delete</button>
+                    <button class="action-button add-run-sheet-button" onclick="addToRunSheet('{{ pickup.id }}')">Add to Run Sheet</button>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#pickup_table').DataTable();
+        });
+
+        function editVendor(id) {
+            window.location.href = '/edit_vendor/' + id;
+        }
+
+        function deleteVendor(id) {
+            if (confirm('Are you sure you want to delete this vendor?')) {
+                window.location.href = '/delete_vendor/' + id;
+            }
+        }
+
+        function addToRunSheet(id) {
+            window.location.href = '/add_pickup_to_runsheet/' + id;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Incoming Containers</title>
+  <link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <style>
+    body {
+      background-color: #0d1117;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .tabulator {
+      background-color: #1a1f2b;
+      border-radius: 12px;
+    }
+
+    .home-button {
+      margin-bottom: 20px;
+      display: inline-block;
+      background: #3b82f6;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .page-logo {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 120px;
+    }
+  </style>
+</head>
+<body>
+
+<a href="{{ url_for('home.home') }}" class="home-button">Home</a>
+<img src="{{ url_for('static', filename='logo.jpg') }}" alt="Company Logo" class="page-logo">
+<h1>Incoming Containers</h1>
+<div id="last-updated" style="text-align: center; margin-bottom: 10px; font-size: 14px; color: #ccc;">
+  Last updated: <span id="last-updated-time">loading...</span>
+</div>
+
+<div id="container-table"></div>
+
+<script src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
+<script>
+let lastUpdated = "";
+
+const table = new Tabulator("#container-table", {
+    layout: "fitColumns",
+    ajaxURL: "/api/incoming_containers",
+    ajaxResponse: function(url, params, response) {
+        // find the latest timestamp
+        if (response.length > 0) {
+            const times = response.map(r => r["last_updated"]);
+            times.sort().reverse();
+            lastUpdated = times[0];
+            document.getElementById("last-updated-time").innerText = lastUpdated;
+        }
+        return response;
+    },
+    rowFormatter: function (row) {
+        const data = row.getData();
+        if (data.status.trim().toLowerCase() === "available") {
+            row.getElement().style.backgroundColor = "#154d20";   // dark green background
+            row.getElement().style.color = "white";                // white text
+            row.getElement().style.fontWeight = "bold";
+        }
+    },
+    columns: [
+        { title: "#", formatter: "rownum", hozAlign: "center", width: 60 },
+        { title: "Status", field: "status", widthGrow: 5 },
+        { title: "Container #", field: "container_number", widthGrow: 2 },
+        { title: "PO #", field: "po_number", widthGrow: 2 },
+        { title: "Container ETA", field: "eta", sorter: "date", widthGrow: 2 },
+        { title: "Last Free Day", field: "last_free_day", sorter: "date", widthGrow: 1 },
+        { title: "Per Diem Last Free", field: "per_diem_day", sorter: "date", widthGrow: 2 }
+    ]
+});
+</script>
+
+
+</body>
+</html>
+

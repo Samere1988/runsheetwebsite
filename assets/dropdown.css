@@ -1,0 +1,22 @@
+/* Style the dropdown menu and its items */
+.Select-control, .Select-placeholder, .Select--single > .Select-control .Select-value, .Select-menu-outer, .Select-option {
+    background-color: #1f2937 !important;
+    color: white !important;
+    border-color: #444 !important;
+}
+
+/* Highlighted option */
+.Select-option.is-focused {
+    background-color: #374151 !important;
+    color: white !important;
+}
+/* Selected value text inside the dropdown box */
+.Select-value-label {
+    color: white !important;
+    font-weight: 500;
+}
+
+/* Optional: make the "X" button to clear more visible */
+.Select-clear-zone {
+    color: #ccc !important;
+}

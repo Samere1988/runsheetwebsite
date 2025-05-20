@@ -32,19 +32,6 @@
             max-width: 120px;
         }
 
-        .home-button {
-            position: absolute;
-            top: 30px;
-            right: 40px;
-            background: #374151;
-            color: white;
-            padding: 8px 14px;
-            font-size: 14px;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none;
-        }
-
         .dataTables_wrapper {
             background: #1a1f2b;
             padding: 20px;
@@ -74,7 +61,7 @@
             justify-content: center;
         }
 
-        .edit-button, .delete-button {
+        .edit-button, .delete-button, .save-button, .cancel-button {
             padding: 6px 16px;
             border: none;
             border-radius: 6px;
@@ -84,8 +71,13 @@
             cursor: pointer;
         }
 
-        .edit-button {
+        .edit-button, .save-button {
             background-color: #3b82f6;
+            color: white;
+        }
+
+        .cancel-button {
+            background-color: #6b7280;
             color: white;
         }
 
@@ -116,7 +108,7 @@
 <body>
 
 <div class="container">
-    <a href="{{ url_for('home.home') }}" class="home-button">Home</a>
+    <a href="{{ url_for('home.home') }}" class="homedb-button">Home</a>
 
     <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Company Logo" class="page-logo">
 
@@ -139,21 +131,45 @@
             <tbody>
                 {% for customer in customers %}
                 <tr>
-                    <td>{{ customer[0] }}</td>
-                    <td>{{ customer[1] }}</td>
-                    <td>{{ customer[2] }}</td>
-                    <td>{{ customer[3] }}</td>
-                    <td>{{ customer[4] }}</td>
-                    <td>{{ customer[5] }}</td>
-                    <td>{{ customer[6] }}</td>
-                    <td class="action-buttons">
-                        <form action="{{ url_for('customer.delete_customer', customer_id=customer[0]) }}" method="post" style="display:inline;">
-                            <button class="delete-button" type="submit" onclick="return confirm('Delete this customer?')">Delete</button>
-                        </form>
-                        <form action="{{ url_for('customer.edit_customer', customer_id=customer[0]) }}" method="get" style="display:inline;">
-                            <button class="edit-button" type="submit">Edit</button>
-                        </form>
-                    </td>
+                    <form action="{{ url_for('customer.update_customer', customer_id=customer[0]) }}" method="post" class="inline-edit-form">
+                        <td>{{ customer[0] }}</td>
+                        <td>
+                            <span>{{ customer[1] }}</span>
+                            <input type="text" name="customer_name" value="{{ customer[1] }}" class="edit-field" hidden>
+                        </td>
+                        <td>
+                            <span>{{ customer[2] }}</span>
+                            <input type="text" name="address" value="{{ customer[2] }}" class="edit-field" hidden>
+                        </td>
+                        <td>
+                            <span>{{ customer[3] }}</span>
+                            <input type="text" name="city" value="{{ customer[3] }}" class="edit-field" hidden>
+                        </td>
+                        <td>
+                            <span>{{ customer[4] }}</span>
+                            <input type="text" name="province" value="{{ customer[4] }}" class="edit-field" hidden>
+                        </td>
+                        <td>
+                            <span>{{ customer[5] }}</span>
+                            <input type="text" name="postal_code" value="{{ customer[5] }}" class="edit-field" hidden>
+                        </td>
+                        <td>
+                            <span>{{ customer[6] }}</span>
+                            <select name="region" class="edit-field" hidden>
+                                {% for region in regions %}
+                                <option value="{{ region }}" {% if region == customer[6] %}selected{% endif %}>{{ region }}</option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                        <td class="action-buttons">
+                            <button type="button" class="edit-button edit-btn">Edit</button>
+                            <button type="submit" class="save-button save-btn" hidden>✔ Save</button>
+                            <button type="button" class="cancel-button cancel-btn" hidden>Cancel</button>
+                            <form action="{{ url_for('customer.delete_customer', customer_id=customer[0]) }}" method="post" style="display:inline;">
+                                <button class="delete-button" type="submit" onclick="return confirm('Delete this customer?')">Delete</button>
+                            </form>
+                        </td>
+                    </form>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -162,20 +178,51 @@
 </div>
 
 <script>
+function bindEditButtons() {
+    document.querySelectorAll('.edit-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const row = btn.closest('tr');
+            row.querySelectorAll('span').forEach(el => el.style.display = 'none');
+            row.querySelectorAll('.edit-field').forEach(el => el.hidden = false);
+            btn.style.display = 'none';
+            row.querySelector('.save-btn').hidden = false;
+            row.querySelector('.cancel-btn').hidden = false;
+        });
+    });
+
+    document.querySelectorAll('.cancel-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const row = btn.closest('tr');
+            row.querySelectorAll('span').forEach(el => el.style.display = '');
+            row.querySelectorAll('.edit-field').forEach(el => el.hidden = true);
+            row.querySelector('.edit-btn').style.display = '';
+            row.querySelector('.save-btn').hidden = true;
+            row.querySelector('.cancel-btn').hidden = true;
+        });
+    });
+}
+
 $(document).ready(function() {
-    $('#customerTable').DataTable({
+    const table = $('#customerTable').DataTable({
         paging: true,
         pageLength: 25,
         info: true,
         searching: true,
         ordering: true,
-        lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]]
+        lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+        drawCallback: function(settings) {
+            bindEditButtons();
+        }
     });
+
+    // Initial binding
+    bindEditButtons();
 });
 </script>
 
 </body>
 </html>
+
 
 
 

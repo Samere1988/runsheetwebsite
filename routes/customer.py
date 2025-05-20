@@ -9,8 +9,13 @@ def view_customer_database():
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM 'Customer List'")
     customers = cursor.fetchall()
+
+    cursor.execute("SELECT DISTINCT `Region` FROM 'Customer List' WHERE `Region` IS NOT NULL AND TRIM(`Region`) != ''")
+    regions = [row[0] for row in cursor.fetchall()]
+
     connection.close()
-    return render_template('view_customer_database.html', customers=customers)
+    return render_template('view_customer_database.html', customers=customers, regions=regions)
+
 
 @customer_bp.route('/delete_customer/<customer_id>', methods=['POST'])
 def delete_customer(customer_id):

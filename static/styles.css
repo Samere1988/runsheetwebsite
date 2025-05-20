@@ -30,9 +30,16 @@ body, html {
     display: flex;
     justify-content: center;
 }
+body.homepage {
+    background-color: #0d1117;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    padding: 40px;
+}
+
 
 /* === HOMEPAGE BUTTONS === */
-.home-button {
+.homepage-button {
     width: 100%;
     padding: 16px;
     font-size: 16px;
@@ -42,15 +49,78 @@ body, html {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.4s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 
-.home-button:hover {
+.homepage-button:hover {
     background-color: #374151;
 }
 
+.home-button {
+    background-color: #2d8cff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+    display: inline-block;
+}
+.home-button:hover {
+    background-color: #1b6edc;
+}
+
+.homedb-button {
+    position: absolute;
+    top: 250px;
+    left: 80px;
+    background: #2d8cff;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+}
+.homedb-button:hover {
+    background-color: #1b6edc;
+}
+.print-button {
+    background-color: #2d8cff;
+    top: 230px;
+    right: 60px;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+    display: inline-block;
+}
+.print-button:hover {
+    background-color: #1b6edc;
+}
+.homevs-button {
+    background-color: #2d8cff;
+    top: 230px;
+    right: 60px;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+    display: inline-block;
+}
+.homevs-button:hover {
+    background-color: #1b6edc;
+}
 /* === RUN SHEET FULL WIDTH === */
 .wide-page {
     max-width: 95vw;
@@ -213,21 +283,30 @@ table.dataTable tbody tr:hover { background-color: #374151 !important; }
     color: #94a3b8;
 }
 
-/* === PRINT === */
-@media print {
-    .no-print { display: none !important; }
-    body { background: white; color: black; }
+.edit-button, .delete-button {
+    padding: 6px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 70px;
+    text-align: center;
+    cursor: pointer;
 }
 
-.home-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
-    gap: 20px;
-    justify-content: center;
-    margin-top: 30px;
+.edit-button {
+    background-color: #3b82f6;
+    color: white;
 }
 
-.home-card {
-    display: flex;
-    justify-content: center;
+.delete-button {
+    background-color: #ef4444;
+    color: white;
+}
+
+.incoming_dataTables_length select {
+    background-color: #1c2533;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 3px 8px;
 }

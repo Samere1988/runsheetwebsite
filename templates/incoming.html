@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Incoming Shipments</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <style>
+    body {
+      background-color: #0d1117;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .tabulator {
+      background-color: #1a1f2b;
+      border-radius: 12px;
+    }
+
+    .home-button {
+      margin-bottom: 20px;
+      display: inline-block;
+      background: #3b82f6;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .page-logo {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 120px;
+    }
+  </style>
+</head>
+<body>
+
+<a href="{{ url_for('home.home') }}" class="home-button">Home</a>
+<img src="{{ url_for('static', filename='logo.jpg') }}" alt="Company Logo" class="page-logo">
+<h1>Incoming Shipments</h1>
+
+<div id="incoming-table"></div>
+
+<script src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
+<script>
+  const table = new Tabulator("#incoming-table", {
+    height: "600px",
+    layout: "fitColumns",
+    ajaxURL: "/api/incoming",  // 🔁 You will create this Flask route
+    ajaxResponse: function(url, params, response) {
+      return response.filter(row => String(row.Received).trim().toUpperCase() !== "Y");
+    },
+    columns: [
+      { title: "Dated", field: "date", sorter: "date", widthGrow: 1 },
+      { title: "PU Date", field: "PU Date", sorter: "date", widthGrow: 1 },
+      { title: "PO#", field: "PO#", widthGrow: 1 },
+      { title: "Supplier", field: "supplier", widthGrow: 3 },  
+      { title: "Material", field: "material", widthGrow: 5 }
+    ]
+
+  });
+</script>
+
+</body>
+</html>

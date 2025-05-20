@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PO & Logistics Log</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0d1117;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 40px;
+            font-size: 13px;
+        }
+
+        #incoming-table {
+            background-color: #1a1f2b;
+            border-radius: 10px;
+        }
+
+        .tabulator {
+            border: none;
+            font-size: 12px;
+        }
+
+        .tabulator .tabulator-header .tabulator-col {
+            background-color: #2c2f3a;
+        }
+
+        .tabulator .tabulator-row:nth-child(even) {
+            background-color: #222b39;
+        }
+
+        .tabulator .tabulator-row:nth-child(odd) {
+            background-color: #1a1f2b;
+        }
+
+        .tabulator .tabulator-cell {
+            color: white;
+            border-color: #374151;
+        }
+
+        .tabulator input {
+            background-color: #1f2937;
+            color: white;
+            border: 1px solid #374151;
+            font-size: 12px;
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header-left,
+        .header-right {
+            width: 20%;
+        }
+
+        .header-left {
+            text-align: left;
+        }
+
+        .header-right {
+            text-align: right;
+        }
+
+        .header-center {
+            flex: 1;
+            text-align: center;
+        }
+
+        .page-logo {
+            max-width: 100px;
+            margin: 0 auto 5px;
+        }
+
+        .header-center h1 {
+            margin: 10px 0 0;
+            font-size: 20px;
+        }
+
+        .home-button,
+        .add-button {
+            padding: 10px 16px;
+            font-size: 14px;
+            background-color: #2d8cff;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .search-wrapper {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #search-input {
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid #374151;
+            background-color: #1f2937;
+            color: white;
+            width: 300px;
+            font-size: 13px;
+        }
+
+        #search-input::placeholder {
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header-bar">
+    <div class="header-left">
+        <form action="{{ url_for('home.home') }}">
+            <button class="home-button" type="submit">🏠 Home</button>
+        </form>
+    </div>
+    <div class="header-center">
+        <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Company Logo" class="page-logo">
+        <h1>PO & Logistics Log</h1>
+    </div>
+    <div class="header-right">
+        <form action="{{ url_for('incoming.add_incoming') }}" method="get">
+            <button class="add-button" type="submit">➕ Add Entry</button>
+        </form>
+    </div>
+</div>
+
+<div class="search-wrapper">
+    <input type="text" id="search-input" placeholder="🔍 Search all columns...">
+</div>
+
+<div id="incoming-table"></div>
+
+<script src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
+<script>
+    let table = new Tabulator("#incoming-table", {
+        height: "600px",
+        layout: "fitDataFill",
+        ajaxURL: "/api/incoming_material",
+        ajaxResponse: function(url, params, response) {
+            return response.map(row => ({
+                id: row["rowid"],
+                date: row["date"],
+                initials: row["initials"],
+                supplier: row["supplier"],
+                location: row["location"],
+                contact: row["contact"],
+                ponum: row["PO#"],
+                notes: row["notes"],
+                material: row["material"],
+                weight_lbs: row["weight/lbs"],
+                pu_date: row["PU Date"],
+                carrier: row["carrier"],
+                border_crossing: row["border crossing"],
+                rate: row["rate"],
+                invoice_approved: row["invoice approved"],
+                rate_confirmed: row["rate confirmed"],
+                bl_sent: row["bl sent"],
+                customs: row["customs"],
+            }));
+        },
+        columns: [
+            { title: "date", field: "date", editor: "input" },
+            { title: "initials", field: "initials", editor: "input" },
+            { title: "supplier", field: "supplier", editor: "input" },
+            { title: "location", field: "location", editor: "input" },
+            { title: "contact", field: "contact", editor: "input" },
+            { title: "PO#", field: "ponum", editor: "input" },
+            { title: "notes", field: "notes", editor: "input" },
+            { title: "material", field: "material", editor: "input" },
+            { title: "weight/lbs", field: "weight_lbs", editor: "input" },
+            { title: "PU Date", field: "pu_date", editor: "input" },
+            { title: "carrier", field: "carrier", editor: "input" },
+            { title: "border crossing", field: "border_crossing", editor: "input" },
+            { title: "rate", field: "rate", editor: "input" },
+            { title: "invoice approved", field: "invoice_approved", editor: "input" },
+            { title: "rate confirmed", field: "rate_confirmed", editor: "input" },
+            { title: "bl sent", field: "bl_sent", editor: "input" },
+            { title: "customs", field: "customs", editor: "input" },
+            {
+                title: "Delete",
+                formatter: "buttonCross",
+                width: 80,
+                hozAlign: "center",
+                headerSort: false,
+                cellClick: function (e, cell) {
+                    const rowData = cell.getRow().getData();
+                    if (confirm(`Delete entry from ${rowData.supplier}?`)) {
+                        fetch(`/delete_incoming/${rowData.id}`, {
+                            method: "POST"
+                        })
+                        .then(res => res.json())
+                        .then(result => {
+                            if (result.success) {
+                                cell.getRow().delete();
+                            } else {
+                                alert("Failed to delete: " + (result.error || "unknown error"));
+                            }
+                        });
+                    }
+                }
+            }
+        ]
+    });
+
+    // REAL search filter
+document.getElementById("search-input").addEventListener("keyup", function () {
+    const keyword = this.value.toLowerCase();
+
+    table.setFilter(function (row) {
+        return Object.values(row).some(val => {
+            if (val === null || val === undefined) return false;
+            return String(val).toLowerCase().includes(keyword);
+        });
+    });
+});
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

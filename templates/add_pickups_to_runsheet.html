@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Pickup to Run Sheet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-color: #1c2533;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 40px;
+        }
+
+        .pickup-form-container {
+            max-width: 900px;
+            margin: auto;
+            background-color: #2a3240;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 26px;
+        }
+
+        .pickup-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .pickup-label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .pickup-input,
+        .pickup-select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #202836;
+            color: white;
+            font-size: 14px;
+        }
+
+        .pickup-input[readonly] {
+            background-color: #323b4b;
+            color: #ccc;
+        }
+
+        .pickup-form-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .pickup-btn-submit {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .pickup-btn-cancel {
+            background-color: #dc3545;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="pickup-form-container">
+    <h2>Add Pickup to Run Sheet</h2>
+    <form method="post" action="{{ url_for('pickup.submit_pickup_to_runsheet', pickup_id=pickup.id) }}">
+        <div class="pickup-grid">
+            <div>
+                <label class="pickup-label">Vendor Name:</label>
+                <input type="text" class="pickup-input" name="vendor_name" value="{{ pickup.vendor_name }}" readonly>
+            </div>
+            <div>
+                <label class="pickup-label">Address:</label>
+                <input type="text" class="pickup-input" name="address" value="{{ pickup.address }}" readonly>
+            </div>
+            <div>
+                <label class="pickup-label">City:</label>
+                <input type="text" class="pickup-input" name="city" value="{{ pickup.city }}" readonly>
+            </div>
+            <div>
+                <label class="pickup-label">Province:</label>
+                <input type="text" class="pickup-input" name="province" value="{{ pickup.province }}" readonly>
+            </div>
+            <div>
+                <label class="pickup-label">Postal Code:</label>
+                <input type="text" class="pickup-input" name="postal_code" value="{{ pickup.postal_code }}" readonly>
+            </div>
+            <div>
+                <label class="pickup-label">Region:</label>
+                <input type="text" class="pickup-input" name="region" value="{{ pickup.region }}" readonly>
+            </div>
+            <div>
+                <label class="pickup-label">Weight (lbs):</label>
+                <input type="number" class="pickup-input" name="weight" value="0" min="0">
+            </div>
+            <div>
+                <label class="pickup-label">Skids:</label>
+                <input type="number" class="pickup-input" name="skids" value="0" min="0">
+            </div>
+            <div>
+                <label class="pickup-label">Bundles:</label>
+                <input type="number" class="pickup-input" name="bundles" value="0" min="0">
+            </div>
+            <div>
+                <label class="pickup-label">Coils:</label>
+                <input type="number" class="pickup-input" name="coils" value="0" min="0">
+            </div>
+            <div>
+                <label class="pickup-label">Pickup:</label>
+                <input type="text" class="pickup-input" name="pickup" value="Y" readonly>
+            </div>
+
+            <div>
+                <label class="pickup-label">Closing Time:</label>
+                <input type="time" class="pickup-input" name="closing_time" value="16:00">
+            </div>
+            <div>
+                <label class="pickup-label">Customer ID:</label>
+                <input type="text" class="pickup-input" value="{{ pickup.customer_id }}" readonly>
+            </div>
+
+        </div>
+
+        <div class="pickup-form-buttons">
+            <button type="submit" class="pickup-btn-submit">Add to Run Sheet</button>
+            <a href="{{ url_for('pickup.add_pickups') }}" class="pickup-btn-cancel">Cancel</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
+

@@ -115,9 +115,68 @@
             margin: 0 10px;
             padding: 10px 20px;
         }
+            #selectCustomerModal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1001;
+    }
+
+    #selectCustomerModal .modal-box {
+        background-color: #2b3548;
+        padding: 30px;
+        border-radius: 16px;
+        max-width: 500px;
+        text-align: left;
+        color: white;
+    }
+
+    #selectCustomerModal label {
+        display: block;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    .customer-option {
+        background-color: #1a202c;
+        padding: 12px 16px;
+        border-radius: 10px;
+        display: flex;
+        gap: 10px;
+        margin-bottom: 12px;
+        align-items: center;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .customer-option:hover {
+        background-color: #2b3548;
+    }
+
+    .customer-option input[type="radio"] {
+        accent-color: #2d8cff;
+        transform: scale(1.3);
+        margin-right: 10px;
+    }
+
+    .customer-info {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-size: 14px;
+    }
+
     </style>
 </head>
 <body>
+
+
+<!-- Modal Popup -->
 <div id="customerModal">
     <div class="modal-box">
         <h3>Enter Customer ID</h3>
@@ -127,9 +186,36 @@
         <button onclick="cancelModal()" class="cancel-btn">Cancel</button>
     </div>
 </div>
+<div id="selectCustomerModal" style="display:none;">
+  <div class="modal-box">
+    <h3 style="margin-bottom: 20px;">Multiple customers found</h3>
+    <form id="customerSelectionForm">
+      <div id="customerOptions" class="customer-options-list"></div>
+      <div style="margin-top: 20px; text-align: center;">
+        <button type="submit" class="submit-btn">Select</button>
+        <button type="button" onclick="cancelCustomerSelection()" class="cancel-btn">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
 
+
+
+<!-- Main Form -->
 <div class="form-container" id="mainForm" style="display:none;">
     <h2>Add Customer to Run Sheet</h2>
+
+    <!-- Flash Message Block -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div style="margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #28a745; color: white; text-align: center;">
+          {% for message in messages %}
+            <p style="margin: 0;">{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
     <form method="post">
         <div class="form-row">
             <div>
@@ -176,22 +262,18 @@
                 <label for="weight">Weight (lbs):</label>
                 <input type="number" name="weight" id="weight" value="0" min="0" oninput="this.value = Math.max(0, this.value)">
             </div>
-
             <div>
                 <label for="skids">Skids:</label>
                 <input type="number" name="skids" id="skids" value="0" min="0" oninput="this.value = Math.max(0, this.value)">
             </div>
-
             <div>
                 <label for="bundles">Bundles:</label>
                 <input type="number" name="bundles" id="bundles" value="0" min="0" oninput="this.value = Math.max(0, this.value)">
             </div>
-
             <div>
                 <label for="coils">Coils:</label>
                 <input type="number" name="coils" id="coils" value="0" min="0" oninput="this.value = Math.max(0, this.value)">
             </div>
-
             <div>
                 <label for="closing_time">Closing Time:</label>
                 <input type="time" name="closing_time" id="closing_time">
@@ -211,45 +293,107 @@
     </form>
 </div>
 
+<!-- JavaScript -->
 <script>
 function cancelModal() {
     window.location.href = "{{ url_for('home.home') }}";
 }
 
 function lookupCustomer() {
-    const id = document.getElementById("modalCustomerId").value;
+    const id = document.getElementById("modalCustomerId").value.trim();
+    if (!id) {
+        alert("Please enter a Customer ID.");
+        return;
+    }
 
-    fetch(`/lookup_customer/${id}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data.error) {
-                alert("Customer ID not found");
-                return;
-            }
+    fetch("/lookup_customer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ customer_id: id })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (!data.found) {
+            alert("Customer ID not found.");
+            return;
+        }
 
-            // Auto-fill form fields with data from the server
-            document.getElementById('customer_name').value = data['Customer Name'] || '';
-            document.getElementById('city').value = data['City'] || '';
-            document.getElementById('province').value = data['Province'] || '';
-            document.getElementById('region').value = data['Region'] || '';
-            document.getElementById('address').value = data['Address'] || '';
-            document.getElementById('postal_code').value = data['Postal Code'] || '';
-            document.getElementById('customer_id').value = id;
-
-
-            // Hide modal and show form
-            document.getElementById("customerModal").style.display = "none";
-            document.getElementById("mainForm").style.display = "block";
-        })
-        .catch(error => {
-            console.error("Error during customer lookup:", error);
-            alert("There was an error looking up the customer.");
-        });
+        if (data.exact) {
+            fillCustomerForm(data.customer);
+        } else {
+            showCustomerSelection(data.matches);
+        }
+    })
+    .catch(error => {
+        console.error("Error during customer lookup:", error);
+        alert("There was an error looking up the customer.");
+    });
 }
+
+function fillCustomerForm(customer) {
+    document.getElementById("customer_id").value = customer.customer_id;
+    document.getElementById("customer_name").value = customer.customer_name;
+    document.getElementById("address").value = customer.address;
+    document.getElementById("city").value = customer.city;
+    document.getElementById("province").value = customer.province;
+    document.getElementById("postal_code").value = customer.postal_code;
+    document.getElementById("region").value = customer.region;
+
+    document.getElementById("customerModal").style.display = "none";
+    document.getElementById("selectCustomerModal").style.display = "none";
+    document.getElementById("mainForm").style.display = "block";
+}
+
+function showCustomerSelection(matches) {
+    const optionsContainer = document.getElementById("customerOptions");
+    optionsContainer.innerHTML = "";
+
+    matches.forEach((customer, index) => {
+        const option = document.createElement("label");
+        option.classList.add("customer-option");
+
+        option.innerHTML = `
+            <input type="radio" name="customerOption" value="${index}" required>
+            <div class="customer-info">
+                <div><strong>${customer.customer_id}</strong> — ${customer.customer_name}</div>
+                <div>${customer.address}, ${customer.city}</div>
+            </div>
+        `;
+
+        optionsContainer.appendChild(option);
+    });
+
+    document.getElementById("customerModal").style.display = "none";
+    document.getElementById("selectCustomerModal").style.display = "flex";
+
+    document.getElementById("customerSelectionForm").onsubmit = function (e) {
+        e.preventDefault();
+        const selectedIndex = document.querySelector('input[name="customerOption"]:checked').value;
+        fillCustomerForm(matches[selectedIndex]);
+    };
+}
+
+
+function cancelCustomerSelection() {
+    document.getElementById("selectCustomerModal").style.display = "none";
+    document.getElementById("customerModal").style.display = "flex";
+}
+
+window.onload = function() {
+    {% if customer %}
+        document.getElementById("mainForm").style.display = "block";
+        document.getElementById("customerModal").style.display = "none";
+        document.getElementById("customer_id").readOnly = true;
+    {% else %}
+        document.getElementById("customerModal").style.display = "flex";
+    {% endif %}
+};
+
 </script>
 
 </body>
 </html>
+
 
 
 

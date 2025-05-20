@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add PO & Logistics Entry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-color: #0d1117;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 40px;
+        }
+
+        .form-box {
+            max-width: 900px;
+            margin: auto;
+            background-color: #1f2937;
+            padding: 30px;
+            border-radius: 14px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #1a202c;
+            color: white;
+        }
+
+        .form-buttons {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .submit-btn {
+            background-color: #2d8cff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .cancel-btn {
+            background-color: #ef4444;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-box">
+    <h2>Add PO & Logistics Entry</h2>
+    <form method="POST">
+        <label>Date</label>
+        <input type="date" name="date" required>
+
+        <label>Initials</label>
+        <input type="text" name="initials" id="initials">
+
+        <label>Supplier</label>
+        <input type="text" name="supplier" id="supplier">
+
+        <label>Location</label>
+        <input type="text" name="location" id="location">
+
+        <label>Contact</label>
+        <input type="text" name="contact" id="contact">
+
+        <label>PO#</label>
+        <input type="text" name="ponum">
+
+        <label>Notes</label>
+        <textarea name="notes"></textarea>
+
+        <label>Material</label>
+        <input type="text" name="material" id="material">
+
+        <label>Weight (lbs)</label>
+        <input type="number" name="weight_lbs" min="0" value="0">
+
+        <label>PU Date</label>
+        <input type="date" name="pu_date">
+
+        <label>Carrier</label>
+        <input type="text" name="carrier" id="carrier">
+
+        <label>Border Crossing</label>
+        <input type="text" name="border_crossing" id="border_crossing">
+
+        <label>Rate</label>
+        <input type="text" name="rate">
+
+        <label>Invoice Approved</label>
+        <input type="text" name="invoice_approved">
+
+        <label>Rate Confirmed</label>
+        <input type="text" name="rate_confirmed">
+
+        <label>BL Sent</label>
+        <input type="text" name="bl_sent">
+
+        <label>Customs</label>
+        <input type="text" name="customs" id="customs">
+
+        <div class="form-buttons">
+            <button type="submit" class="submit-btn">Add Entry</button>
+            <a href="{{ url_for('incoming.view_incoming_material') }}"><button type="button" class="cancel-btn">Cancel</button></a>
+        </div>
+    </form>
+</div>
+
+<!-- Autocomplete Script -->
+<script>
+function enableAutocomplete(fieldId, column) {
+    const input = document.getElementById(fieldId);
+    const datalistId = fieldId + "_list";
+
+    // Create datalist if not already present
+    let existing = document.getElementById(datalistId);
+    if (!existing) {
+        let datalist = document.createElement("datalist");
+        datalist.id = datalistId;
+        document.body.appendChild(datalist);
+        input.setAttribute("list", datalistId);
+    }
+
+    // Fetch and populate
+    fetch(`/api/suggestions/${column}`)
+        .then(response => response.json())
+        .then(data => {
+            const list = document.getElementById(datalistId);
+            list.innerHTML = "";
+            data.forEach(value => {
+                if (value) {
+                    const option = document.createElement("option");
+                    option.value = value;
+                    list.appendChild(option);
+                }
+            });
+        });
+}
+
+// Fields to apply autocomplete to
+window.onload = function () {
+    enableAutocomplete("supplier", "supplier");
+    enableAutocomplete("location", "location");
+    enableAutocomplete("contact", "contact");
+    enableAutocomplete("carrier", "carrier");
+    enableAutocomplete("material", "material");
+    enableAutocomplete("customs", "customs");
+    enableAutocomplete("initials", "initials");
+    enableAutocomplete("border_crossing", "border_crossing");
+};
+</script>
+
+</body>
+</html>

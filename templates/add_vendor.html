@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Vendor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-color: #1c2533;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 40px;
+        }
+
+        .form-box {
+            max-width: 800px;
+            margin: auto;
+            background-color: #2b3548;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 18px rgba(0,0,0,0.4);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #1a202c;
+            color: white;
+        }
+
+        .form-buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .save-btn {
+            background-color: #2d8cff;
+            color: white;
+            margin-right: 15px;
+        }
+
+        .cancel-btn {
+            background-color: #ef4444;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-box">
+    <h2>Add Vendor</h2>
+    <form method="POST">
+        <label>Comment</label>
+        <input type="text" name="comment">
+        <label>Vendor Name</label>
+        <input type="text" name="vendor_name" required>
+
+        <label>Address</label>
+        <input type="text" name="address" required>
+
+        <label>City</label>
+        <input type="text" name="city" required>
+
+        <label>Region</label>
+        <select name="region" required>
+            {% for region in ['North Shore', 'Montreal', 'South Shore', 'Ontario', 'Quebec', 'Beauce', 'Drummond', 'Sherbrooke'] %}
+            <option value="{{ region }}">{{ region }}</option>
+            {% endfor %}
+        </select>
+
+        <label>Province</label>
+        <select name="province" required>
+            <option value="QC">QC</option>
+            <option value="ON">ON</option>
+        </select>
+
+        <label>Postal Code</label>
+        <input type="text" name="postal_code">
+
+        <div class="form-buttons">
+            <button type="submit" class="save-btn">Add Vendor</button>
+            <a href="{{ url_for('pickup.add_pickups') }}"><button type="button" class="cancel-btn">Cancel</button></a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
