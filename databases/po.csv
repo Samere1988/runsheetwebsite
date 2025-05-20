@@ -1,0 +1,387 @@
+﻿Date,Initials,Supplier,Location,Contact,PO#,Notes,Material,Weight / lbs,PU Date,Carrier,Border Crossing, Rate $ , Invoice Approved ,Rate,B/L sent,Customs
+2024-06-06,DAN,Amerinox,"Camden, NJ",Rick,C208979,,"304L, 3/16"" x 60"" x 189 / 120""","17,000lbs",2024-07-02,Formule Transit,"Lacolle, QC","$1,400.00",,Y,Y,Y
+2024-06-07,BL,Polished Metals,"Union, NJ",Mark,P215322,,"304 #8, 20GA X 48 X 144","1,500lbs",,,,,,Y,Y,Y
+2024-06-07,IX,Main Steel,"Elk Grove Village, IL",Shawn,C208974,,"201LN, .062 x 48 x 96","33,000lbs",2024-07-02,Essence,,"$2,050.00",,Y,Y,Y
+2024-06-07,PG,Main Steel,"Harmony, PA",Mark,C208978,,"48"" slit coil","18,000lbs",2024-07-03,,,,,Y,Y,Y
+2024-06-07,IXE,Main Steel,"Harmony, PA",Mark,C208973,,".075"" X 48"" X 120""","35,000lbs",2024-07-03,Essence,,"$1,750.00",,Y,Y,Y
+2024-06-07,IXE,Polished Metals,"Union, NJ",Mark,C208954,,"316L, 3/8"" x 60"" x 120""","20,000lbs",2024-07-09,Formule Transit,"Lacolle, QC","$1,400.00",,Y,Y,Y
+2024-06-06,DAN,Amerinox,"Camden, NJ",Rick,C208984,,"304L, 1/4"" x 48"" x 96 / 120"" ","23,000lbs",,,,,,Y,Y,Y
+2024-07-10,DAN,Main Steel,"Harmony, PA",Mark,P214583,,"201LN .075"" x 48.5 x coil","35,000lbs",2024-07-10,DVL,DVL," US1,395.00 ",,Y,Y,Y
+2024-06-03,DAN,Spectrum Metals,"Warminster, PA",Patrick,P215335,,"304L 2B, 22ga x 13"" x coil","7,000lbs",2024-07-11,Formule Transit,"Lacolle, QC","$1,400.00",,Y,Y,Y
+2024-06-06,DAN,Amerinox,"Camden, NJ",Rick,C208983,,"304L, 3/16"" x 48"" x 96 / 120"" / 144","20,000lbs",,,,,,Y,Y,Y
+2024-06-06,DAN,Amerinox,"Camden, NJ",Rick,C208976,,"316L, 1/4"" x 48 x 167/204""","14,000lbs",,,,,,Y,Y,Y
+2024-05-23,IX,Leveltek,"Benwood, WV",Kelly,C208899,,"201LN  7ga x 48"" x 96 / 120","28,000LBS ",2024-07-11,Essence,$225.00,"$1,850.00",,Y,Y,Y
+2024-07-12,DAN,Main Steel,"Harmony, PA",Mark,C208992,Ship to EGV,coil & sheet,"35,000lbs",2024-07-15,DVL,DVL," US$ 1,395.00 ",,Y,Y,Y
+2024-06-27,UT,Amerinox,"Camden, NJ",Rick,C208986,,"SPL 316L HRAP NO PAPER 1/4"" x 48"" x  240"" / 120"" / 96""","22,700LBS",2024-07-15,Formule Transit,"Lacolle, QC","$1,400.00",,Y,Y,Y
+2024-07-05,DAN,Amerinox,"Camden, NJ",Rick,C208999,,"304L, 11ga x 72"" x 240""","8,000lbs",,,,,,Y,Y,Y
+2024-06-27,UT,Amerinox,"Camden, NJ",Rick,C208988,,"SSH 304 2B PAPER 10ga x 60"" x 120""","11,040LBS",,,,,,Y,Y,Y
+2024-07-08,UT,Kingmaker,"Somerset, NJ",Vera,P215397,,"304, 4"" x 6"" x 3/16 x 20","2,100lbs",,,,,,Y,Y,Y
+2024-07-09,DAN,Amerinox,"Camden, NJ",Rick,C209007,,"304L, 8ga x 60 x 120 / 240""","16,500lbs",2024-07-18,Formule Transit,"Lacolle, QC","$1,300",,Y,Y,Y
+2024-07-11,DAN,Amerinox,"Camden, NJ",Rick,C209009,,"304L, 7ga x 60 x 120 / 170""","18,000lbs",2024-07-18,,,,,Y,Y,Y
+2024-07-19,PG,NAS,"Wrightsville, PA",Christne,P215435,make pickup appointment,316L 2B 12ga x 60 x coil,"11,000lbs",2024-07-23,DVL,DVL, US$795.00 ,,Y,Y,Y
+2024-06-13,CT,Independent Stainless ,"Egg Harbor, NJ",Teri,P215418,,"3/8"" x 2"" x 12-14'",300lbs,2024-07-24,Formule Transit,"Lacolle, QC ","$1,400.00",,Y,Y,Y
+2024-06-13,BL,Independent Stainless ,"Egg Harbor, NJ",Teri,P215325,,"1/2"" x 2.1/4"" x 117.86""","3,700lbs",,,,,,Y,Y,Y
+2024-07-17,IXE,Independent Stainless ,"Egg Harbor, NJ",Teri,P215428,,"5/16"" x 2"" x  144""",400lbs,,,,,,Y,Y,Y
+2024-06-27,UT,Amerinox,"Camden, NJ",Rick,C208987,,"SSH 304 X4 PAPER 10ga x 48"" x Coil","26,000lbs",,,,,,Y,Y,Y
+2024-07-11,DAN,Amerinox,"Camden, NJ",Rick,C209013,,"304L, 1/4 X 48 X 96","10,000LBS",,,,,,Y,Y,Y
+2024-07-17,EC,NAS,"Guelph, ON",Christine,P215425,,"316L .075 / .060 x 48"" x coil","36,000lbs",2024-07-24,Essence - Glock Carrier,"Buffalo, NY","$2,000.00",,Y,Y,Y
+2024-07-23,MD,Ta Chen,"Burlington, NJ",Andrew,P215443,,"304L, 1/4""; 1/8"", 3/16 x 60 / 48 x 96 /120 ","10,000lbs",2024-07-25,Formule Transit,"Lacolle, QC","$1,400.00",,Y,Y,Y
+2024-07-05,DAN,Amerinox,"Camden, NJ",Rick,C209000,,"SSH 316L 2B  4228 REF 7ga x 48"" x 211"" / 247""/129"" / 229""","27,370LBS",,,,,,Y,Y,Y
+2024-07-16,DAN,Main Steel,"Elk Grove Village, IL",Shawn,C209016,,"201LN .075"" x 48 x 120 / 96","29,000lbs",2024-07-25,Essence,"Sarnia, ON","$2,050.00",,Y,Y,Y
+2024-07-16,DAN,Main Steel,"Elk Grove Village, IL",Shawn,C208992,,"201LN .075"" x 48 x 120 / 96","2,500lbs",,,,,,Y,Y,Y
+2024-07-08,DAN,Polished Metals,"Hillside, NJ",Mark,P215398,,"304 #8, 16ga/ 18ga x 60"" x 120""","7,000lbs",2024-08-06,Formule Transit," Lacolle, QC ","$1,400.00",,Y,Y,Y
+2024-07-08,RW,Polished Metals,"Hillside, NJ",Mark,P215414,,"316 # 8, 14GA X 48"" X 120""",200lbs,,,,,,Y,Y,Y
+2024-07-15,AA,Polished Metals,"Hillside, NJ",Mark,P215419,,"304 #6, 16ga, 22ga x 48 x 96 / 120","3,000lbs",,,,,,Y,Y,Y
+2024-07-04,DAN,Phoenix Tubes,"Bethlehem, PA",Illy,P215387,,"304, 4"" x 3/16"" x 88""","10,000lbs",,,,,,Y,Y,Y
+2024-06-25,BL,Phoenix Tubes,"Bethlehem, PA",Illy,P215344,,"304, 3"" x 6""x 1/4"" x 20'","6,000lbs",,,,,,Y,Y,Y
+2024-07-25,DAN,Amerinox ,"Camden, NJ",Rick,P214520,,"201 2B, .210 x 48"" x coil","19,000lbs",2024-08-06,DVL,DVL,"$1,873.00",,Y,Y,Y
+2024-07-16,DAN,Main Steel,"Elk Grove Village, IL",Shawn,C208995,,"201LN .075"" x 48 x 120 / 96","31,700lbs",2024-08-06,Essence,"Sarnia, ON","$2,050.00",,Y,Y,Y
+2024-07-08,DAN,Uniserv,"Brookfield, OH",Jeremiah,C209005,,"201LN 2B, 7ga x 9.4"" x coil","48,3000lbs",2024-08-07,Formule Transit,"Lacolle, QC ","$2,200.00",,Y,Y,Y
+2024-07-22,DAN,Main Steel,"Harmony, PA",Mark,C209021,,"201LN .060"" x 48  x 120","29,000lbs",2024-08-07,Essence,"Lansdown, ON ","$1,750.00",,Y,Y,Y
+2024-07-16,DAN,Main Steel,"Harmony, PA",Mark,C208993,,"201LN .075"" x 48 x 120","30,000lbs",,,,,,Y,Y,Y
+2024-07-10,DAN,Main Steel,"Harmony, PA",Mark,C209003,,"201LN .075"" x 48 x 144","28,000lbs",2024-08-06,,,"$1,750.00",,Y,Y,Y
+2024-07-16,DAN,Main Steel,"Harmony, PA",Mark,C209001,,"201LN .075"" x 48 x 144/120"," 26,830lbs",2024-08-08,,,,,Y,Y,Y
+2024-07-22,IXE,Leveltek,"Benwood, WV",Kelly,C208926,,"201LN 1/4H .075 x 48"" x 144""","26,000lbs",2024-08-07,Essence,"Lansdown, ON ","$1,850.00",,Y,Y,Y
+2024-07-23,IXE,Leveltek,"Benwood, WV",Kelly,C209004,,"201LN 1/4H .125 x 48"" x 96""/120""","61,000lbs",2024-08-08,,,,,Y,Y,Y
+2024-07-22,IXE,Leveltek,"Benwood, WV",Kelly,C209020,,"201LN 1/4H .030 x 48"" x 120""","30,620lbs",2024-08-12,Essence,"Lansdown, ON ","$1,850.00",,Y,Y,Y
+2024-07-18,IXE,Polished Metals,"Union, NJ",Mark,C209017,,"316L #8, 3/8"" x 60"" x 120""","36,919lbs",2024-08-13,Formule Transit,"Lacolle, QC","$1,300.00",,Y,Y,Y
+2024-08-01,RW,Polished Metals,"Union, NJ",Mark,P215453,,"316 # 8, 14GA X 48"" X 120""",126lbs,,,,,,Y,Y,Y
+2024-08-13,MD,Main Steel,"Elk Grove Village, IL",Shawn,C209025,,"SSH 201LN #80 1/4HARD PAPER .090 x 48"" x 96""","27,370lbs",2024-08-13,Essence,"Sarnia, ON","$2,100.00",,Y,Y,Y
+2024-07-25,PG,CMC,"Bellwood, IL",Manny,C209023,,SSH 304 #4 22ga x 48 x  96 / 120,"20,475lbs",,,,,,Y,Y,Y
+2024-07-31,AA,Kingmaker,"Somerset, NJ",Vera,P215450,,304 Tubes - 20ft 5 bundles,600lbs,2024-08-15,Formule Transit," Lacolle, QC ","$1,400.00",,Y,Y,Y
+2024-08-02,RW,Kingmaker,"Somerset, NJ",Vera,P215455,,304 Tubes - 20ft 8 bundles,"5,300lbs",,,,,,Y,Y,Y
+2024-07-22,IX,Amerinox,"Camden, NJ",Rick,C209019,,"316L #4 20Ra, #4, 2B 16ga x 48 x 96 / 120","15,995lbs",,,,,,Y,Y,Y
+2024-08-01,DAN,Amerinox,"Camden, NJ",Rick,C209022,," SSH 316L X4 4228 REF 12ga x 60"" x 120""","10,000lbs",,,,,,Y,Y,Y
+2024-08-15,,Main Steel,"Harmony, PA",Mark,C209035,,"SSH 201LN 1/4 HARD PAPER .060 x 48"" x 96""","34,068lbs",2024-08-19,Essence -Malbert,"Lansdown, ON ","$1,750.00",,Y,Y,Y
+2024-06-06,DAN,Amerinox,"Camden, NJ",Rick,C208780,,".060 x 60"" x 120""","2,370lbs",2024-08-21,Formule Transit,"Lacolle, QC","$1,400.00",,Y,Y,Y
+2024-08-08,MD,Amerinox,"Camden, NJ",Rick,C209053,,"304L 1/4"" x 48 x 96 / 120","23,000lbs",,,,,,Y,Y,Y
+2024-08-06,MD,Spectrum Metals,"Warminster, PA",Patrick,P215459,,"304L, 22ga x  13.3/8"" x coil","2,000lbs",,,,,,Y,Y,Y
+2024-08-15,BL,Ta Chen,"Atlanta, GA",Andrew,P215488,,"304L, 6 x 6 x 3/8 x 20'","4,200lbs",2024-08-21,DVL,,"$1,095.00",,Y,Y,Y
+2024-08-09,PG,Main Steel,"Harmony, PA",Mark,C209033,RUSH,"304L .063"" x 48"" x coil","56,000lbs",2024-08-21,Formule Transit,"Lacolle, QC","$2,100.00",,Y,Y,Y
+2024-08-15,BL,Ta Chen,"Burlington, NJ",Andrew,P215501,,"316L, 1/4"" x 60"" x 120","3,500lbs",2024-08-23,Formule Transit,"Lacolle, QC","$1,400.00",,Y,Y,Y
+2024-08-20,MD,Amerinox,"Camden, NJ",Rick,C209062,,"304L  5-16"" x 60 x 120","16,000lbs",,,,,,Y,Y,Y
+2024-08-09,UT,Amerinox,"Camden, NJ",Rick,C209034,," SPL 304L HRAP NO PAPER 3/16"" x 72"" x 240"" / 120""","22,201lbs",,,,,,Y,Y,Y
+2024-08-22,DAN,Main Steel,"Elk Grove Village, IL",Shawn,C209037,,"SSH 201LN 1/4 HARD PAPER .090 x 48"" x 96""","33,370lbs",2024-08-26,Essence,"Windsor, ON","$2,050.00",,Y,Y,Y
+2024-08-22,UT,Kingmaker,"Somerset, NJ",Kristine,P215510,," SST 304 HRAP 3"" x 1/4"" x 20'","3,740lbs",2024-08-27,Formule Transit,"Lacolle, QC","$1,400.00",,Y,Y,Y
+2024-08-22,UT,Amerinox,"Camden, NJ",Rick,C209065,,"SPL 316L HRAP NO PAPER 3/16"" x 60"" x 120""","14,895lbs",,,,,,Y,Y,Y
+2024-08-22,UT,Amerinox,"Camden, NJ",Rick,C209064,,"SPL 304L HRAP NO PAPER 1/4"" x 60"" x 144"" / 120""","20,160lbs",,,,,,Y,Y,Y
+2024-08-16,DAN,Amerinox,"Camden, NJ",Rick,C209056,"5,680lbs urgent"," SSH 316L 2B 4228 REF 7ga x 48"" x 193""/ 157""/ 230""","13,020lbs",,,,,,Y,Y,Y
+2024-08-26,DAN,Main Steel,"Harmony, PA",Mark,C209055,,"SSH 201LN .90 x 48"" x 96""","28,678lbs",2024-08-26,Essence - Aaron Xpress Inc,"Lansdown, ON ","$1,750.00",,Y,Y,Y
+2024-08-27,DAN,Main Steel,"Harmony, PA",Mark,C209054,,"SSH 201LN 1/4 .060"" x 48""  x 96""/120""/144""","32,560lbs",2024-08-28,Essence - Daytona Freight Systems,"Lansdown, ON ","$1,750.00",,Y,Y,Y
+2024-08-27,DAN,Main Steel,"Harmony, PA",Mark,C209036,,"SSH 201LN 2B .075"" x 48""x 120""","34,220lbs",2024-08-28,Formule Transit,"Lacolle, QC","$1,850.00",,Y,Y,Y
+2024-08-26,UT,Amerinox,"Camden, NJ",Rick,C209068,," SPL 304L HRAP NO PAPER 1/4"" x 48"" x 120""/ 96""","18,810lbs",2024-09-03,Formule Transit,"Lacolle, QC","$1,400.00",2024-09-09,Y,Y,Y
+2024-07-08,DAN,Polished Metals,"Hillside, NJ",Mark,P215511,," SSH 316L X8 14GA X 48""x 120""",325lbs,,,,,,Y,Y,Y
+2024-08-16,DAN,Amerinox,"Camden, NJ",Rick,C209056,"7,035lbs"," SSH 316L 2B 4228 REF 7ga x 48"" x 193""/ 157""/ 230""","13,020lbs",,,,,,Y,Y,Y
+2024-08-26,DAN,Amerinox,"Camden, NJ",Rick,C209069,," SSH 316L 2B 4228 REF 7ga x 48"" x 229""","12,190lbs",,,,,,Y,Y,Y
+2024-08-27,PG,Rigidized Metals,"Buffalo, NY",Susanne,P215523,,"304 2B, 16ga x 48"" x 120""",400lbs,2024-09-04,DVL,-,$590.00,2024-09-09,Y,Y,Y
+2024-08-22,IX,Yarde Metals,"Southington, CT",Ryan,P215509,,"6063 1/8"" x 3/4"" x 192""",100lbs,2024-09-04,DVL,-,$630.00,2024-09-12,Y,Y,Y
+2024-08-30,MD,Ta Chen,"Pleasant Prairie, WI",Andrew,P215533,,"316L 1/4"" x 96"" x 240""","7,500lbs",2024-09-05,Essence,"Lacolle, QC",$700.00,2024-09-09,Y,Y,Y
+2024-08-28,MD,Leveltek,"Bennwood, WV",Kelly,P215466,,".210"" x 48"" x 120""","18,000lbs",2024-09-09,Essence - Tarzan Transport,"Lansdowne, ON","$1,850.00",2024-09-12,Y,Y,Y
+2024-09-06,MD,Leveltek,"Bennwood, WV",Kelly,C209079,,".125"" x 48"" x 96","31,000lbs",,,,,,Y,Y,Y
+2024-09-09,CON,Ta Chen,"Pleasant Prairie, WI",Andrew,P215556,,"ACP 6061-T6 PAPER .250"" x 60"" x 192""","3,848lbs",2024-09-09,Essence - Bestway,,"$1,675.00",2024-09-12,Y,Y,Y
+2024-09-11,MD,Main Steel,"Harmony, PA",Mark,C209058,,"SSH 201LN .075"" x 48"" x coil","31,000lbs",2024-09-12,DVL,,"$1,550.00",2024-09-23,Y,Y,Y
+2024-09-10,PG,Main Steel,"Harmony, PA",Mark,C209083,RUSH,"304l 2b .063"" X 60 X 380'","48,000lbs",2024-09-12,Formule Transit,"Lacolle, QC","$1,850.00",2024-09-17,Y,Y,Y
+2024-09-12,MD,Laporte,"La Porte, IN",April,C209087,,"SSH 201LN 1/4 HARD NO PAPER .090 x 2-3/4"" x Coil","32,145lbs",2024-09-16,Essence,,"$1,925.00",2024-09-19,Y,Y,Y
+2024-09-13,MD,Main Steel,"Harmony, PA",Mark,C209094,,"SSH 201LN 1/4 HARD PAPER .075 x 48"" x 120""","27,680lbs",2024-09-16,Essence,,"$1,750.00",2024-09-19,Y,Y,Y
+2024-09-11,SM,Ta Chen,"Pleasant Prairie, WI",Andrew,P215582,,"316l, 1.5 / 1.75 X 96"" X 240""","23,000LBS",2024-09-16,Essence,,"$1,550.00",2024-09-20,Y,Y,Y
+2024-09-11,MD,Amerinox,"Camden, NJ",Rick,C209104,"A,B,C",SPL 304L 1/4 x 48 x 96 / 120,"13,640lbs",2024-09-16,Formule Transit,"Lacolle, QC","$1,400.00",2024-09-18,Y,Y,Y
+2024-09-09,MD,Amerinox,"Camden, NJ",Rick,C209095,,304L 3/16 x 60 x 96 / 120,"19,615lbs",,,,,,Y,Y,Y
+2024-09-06,BL,Kingmaker,"Somerset, NJ",Vera,P215557,,"SST 304 X4 4"" x 1/8"" x 20'","5,024lbs",,,,,,Y,Y,Y
+2024-08-28,UT,Amerinox,"Camden, NJ",Rick,C209070,,"SSH 316L X4 4228 REF 12ga x 48"" x 96""/ 120"""," 9,980lbs",2024-09-18,Formule Transit,"Lacolle, QC","$1,400.00",2024-09-23,Y,Y,Y
+2024-09-17,MD,Ta Chen,"Burlington, NJ",Andrew,P215610,,"316L,  1/4""  X 96"" X 240""","7,000lbs",,,,,,Y,Y,Y
+2024-09-11,MD,Amerinox,"Camden, NJ",Rick,C209104,"D,E",SPL 304L 1/4 x 48 x 96 / 120,"10,000lbs",,,,,,Y,Y,Y
+2024-09-11,SM,Ta Chen,"Burlington, NJ",Andrew,P215580,,"316l, 5/8 / 1/2""  X 96"" X 240""","11,225lbs",,,,,,Y,Y,Y
+2024-09-17,BL,Kingmaker,"Somerset, NJ",Vera,P215609,,"3"" x  3"" x  3/16"" x 20","1,000lbs",2024-09-19,Formule Transit,"Lacolle, QC","$1,400.00",2024-09-23,Y,Y,Y
+2024-09-04,UT,Amerinox,"Camden, NJ",Rick,C209080,,"SSH 316L X4 4228 REF 14ga x 48"" x 96""/ 120"" ","21,450lbs",,,,,,Y,Y,Y
+2024-09-16,UT,Amerinox,"Camden, NJ",Rick,C209111,,"SPL 316L HRAP NO PAPER 3/16"" x 48"" x 96""/ 120"" ","20,190lbs",,,,,,Y,Y,Y
+2024-09-13,MD,Amerinox,"Camden, NJ",Rick,C209112,,"304L HRAP, 1/4"" X 60 X 120 / 144","21,835lbs",2024-09-24,Formule Transit,"Lacolle, QC","$1,500.00",2024-09-26,Y,Y,Y
+2024-09-18,MD,Phoenix,"Bethlehem, PA",Illy,P215616,,"304, 6"" x 3"" x 3/8"" x 20'",850lbs,,,,,,Y,Y,Y
+2024-09-17,BL,Kingmaker,"Somerset, NJ",Vera,P215622,,"SRT 304 X4 2"" x 3"" x 1/8"" x 20'","3,715lbs",,,,,,Y,Y,Y
+2024-09-06,UT,Amerinox,"Camden, NJ",Rick,C209093,,"SSH 304L 2B 4228 REF 11ga x 72"" x 120""","12,632lbs",2024-09-25,Formule Transit,"Lacolle, QC","$1,400.00",2024-09-30,Y,Y,Y
+2024-09-23,CT,Ta Chen,"Burlington, NJ",Andrew,P215634,,"316L,  1/4""  X 96"" X 240""","7,000lbs",,,,,,Y,Y,Y
+2024-08-29,SMD,Rigidized Metals,"Buffalo, NY",Susanne,P215532,,"304 2B, 14ga x 48"" x 120""",600lbs,2024-09-25,DVL,-,$695.00,2024-10-01,Y,Y,Y
+2024-09-10,AA,Rigidized Metals,"Buffalo, NY",Susanne,P215574,,"304 #4 5WL2 16ga x 48"" x 96""",100lbs,,,,,,Y,Y,Y
+2024-09-25,DAN,Main Steel,"Elk Grove Village, IL",Shawn,C209110,,"SSH 201LN #80 1/4HARD 4228 REF .075 x 48"" x 96""","32,940lbs",2024-09-26,Essence - Berkut Transportation ,"Windsor, ON","$2,050.00",2024-09-30,Y,Y,Y
+2024-09-23,MD,Amerinox,"Camden, NJ",Rick,C209118,,"304L , 3/16"" X 48 X 120 / 242","20,000lbs",2024-09-26,Formule Transit,"Lacolle, QC","$1,400.00",2024-09-30,Y,Y,Y
+2024-09-25,MD,Spectrum Metals,"Warminster, PA",Patrick,P215577,,"SSH 304L 2B NO PAPER 22ga x 13-3/8"" ","3,610lbs",,,,,,Y,Y,Y
+2024-09-13,MD,Amerinox,"Camden, NJ",Rick,C209113,,"304L HRAP, 3/16"" X 60 X 120","9,965LBS",2024-09-27,Formule Transit,"Lacolle, QC","$1,400.00",2024-09-30,Y,Y,Y
+2024-09-11,MD,Amerinox,"Camden, NJ",Rick,C209102, ,"316L, 7ga x 48 x 230 SPV 2 sides","12,805lbs",,,,,,Y,Y,Y
+2024-09-12,UT,Amerinox,"Camden, NJ",Rick,C209106, ,"SPL 304L HARP 4228 REF 3/16"" x 60"" x 120""","13,917lbs",,,,,,Y,Y,Y
+2024-09-02,AA,Polished Metals,"Hillside, NJ",Mark,P215544,,"SSH 304 X 6 4228 REF 16ga/22ga x 48"" x 96"" / 120""","2,599lbs",,,,,,Y,Y,Y
+2024-09-26,PG,Main Steel,"Harmony, PA",Mark,C209108,,"SSH 304L 2B NO PAPER .063 x 60"" x 420'/ 380'","21,980lbs",2024-09-30,Essence,"Lansdowne, ON","$1,350.00",2024-10-09,Y,Y,Y
+2024-09-30,DAN,Main Steel,"Elk Grove Village, IL",Shawn,C209066,,"SSH 201LN #80 1/4 HARD PAPER .075 x 39.438"" x 181""","25,530lbs",2024-10-01,Essence - Sodey Trucking,"Sarnia,ON","$1,800.00",2024-10-09,Y,Y,Y
+2024-09-27,PG,Rigidized Metals,"Buffalo, NY",Ronald,P215612  ,,"SSH 304 2B 6WL PAPER 16ga x 48"" x 120""",204lbs,2024-10-01,DVL,-,$650.00,,Y,Y,Y
+2024-09-26,UT,Amerinox,"Camden, NJ",Rick,C209122,,"SPL 304L HRAP NO PAPER 1/4"" x 48"" x 96""","22,375lbs",2024-10-02,Formule Transit,"Lacolle, QC","$1,400.00",2024-10-15,Y,Y,Y
+2024-09-26,UT,Amerinox,"Camden, NJ",Rick,C209123,,"SPL 316L HRAP NO PAPER 3/16"" x 60"" x 120""/ 144""","16,075lbs",,,,,,Y,Y,Y
+2024-09-25,IX,Kingmaker,"Somerset, NJ",Kristina,P215642,,"STU 304L 1.25"" x .049"" x 20'",700lbs,,,,,,Y,Y,Y
+2024-10-01,UT,Rolled Alloys,"Fairfield, OH",Jaime,P215654,,"SSH 410 2D PAPER 11ga x 36"" x 120""",484lbs,2024-10-02,DVL,-,$695.00,2024-10-08,Y,Y,Y
+2024-10-01,MD,Leveltek,"Benwood, WV",Kelly,C209071,,"SSH 201LN 1/4 HARD PAPER 7ga x 48"" x 96""/ 120""","36,100lbs",2024-10-02,Essence - Toiture J.M. Rodrigue & Fils,"Lansdowne, ON","$1,850.00",2024-10-09,Y,Y,Y
+2024-10-02,MD,Leveltek,"Benwood, WV",Kelly,C209077,,"SSH 201LN 1/4 HARD PAPER .090 x 48"" x 96""/ 120""","30,640lbs",2024-10-03,Essence - H. Bill,"Lansdowne, ON","$1,850.00",2024-10-09,Y,Y,Y
+2024-10-03,PG,Main Steel,"Harmony, PA",Mark,C209127,,"SSH 304L 2B NO PAPER .063 x 60"" x 380' / 420'","42,860lbs",2024-10-07,Essence,"Lansdowne, ON","$1,750.00",,Y,Y,Y
+2024-10-07,MD,Ta Chen,"Burlington, NJ",Andrew,P215682,,"SSH 304L 2B PAPER 8ga x 60"" x 48"" x 120""","12,196lbs",2024-10-08,Formule Transit,"Lacolle, QC",$950.00,2024-10-09,Y,Y,Y
+2024-10-08,PG,Main Steel,"Harmony, PA",Mark,C209137,,"SSH 304L 2B NO PAPER .063 x 60"" x 420'/ 380'","32,554lbs",2024-10-09,Essence - Aaron Xpress,"Alexandria Bay, NY","$1,750.00",2024-10-10,Y,Y,Y
+2024-09-12,UT,Amerinox,"Camden, NJ",Rick,C209106,,"SPL 304L X4 4228 REF 3/16"" x 60"" x 120""","8,890lbs",2024-10-10,Formule Transit,"Lacolle, QC","$1,400.00",2024-10-16,Y,Y,Y
+2024-09-13,MD,Amerinox,"Camden, NJ",Rick,C209113,,"304L X4 , 3/16"" X 48 X 96 /120","9,155lbs",,,,,,Y,Y,Y
+2024-10-04,UT,Penn Stainless,"Quakertown, PA",Cathy,P215675,,"SPL 410S HRAP NO PAPER 1/4"" x 96"" x 120""",893lbs,,,,,,Y,Y,Y
+2024-10-04,UT,Penn Stainless,"Quakertown, PA",Cathy,P215678,,"SSH 17-4PH PAPER .063 x 36"" x 120""",822lbs,,,,,,Y,Y,Y
+2024-10-04,MD,Amerinox,"Camden, NJ",Rick,C209131,,"SSH 316L 2B 4228 REF 7ga x 60"" x 120""","16,395lbs",2024-10-16,Alain Giroux,"Lacolle, QC","$1,400.00",2024-10-22,Y,Y,Y
+2024-10-09,MD,Amerinox,"Camden, NJ",Rick,C209140,,"304L 4228 - 1/4"" x 48"" x / 96 / 120""","26,915lbs",,,,,,Y,Y,Y
+2024-10-09,PG,Phoenix Tubes,"Bethlehem, PA",Illy,P215696,,"316L #4 3"" x 1/8"" x 20'",500lbs,,,,,,Y,Y,Y
+2024-10-02,MD,Leveltek,"Benwood, WV",Kelly,C209076,,"SSH 201LN 1/4 HARD PAPER .090 x 48""x 96"" / 138""","30,210lbs",2024-10-17,Essence - 7/24 ,"Lansdowne, ON","$1,850.00",2024-10-22,Y,Y,Y
+2024-10-07,UT,Amerinox,"Camden, NJ",Rick,C209136,,"SPL 304L HRAP NO PAPER 3/16"" x 60"" x 96""/ 120""/ 240""","20,340lbs",2024-10-17,Formule Transit,"Lacolle, QC","$1,400.00",,Y,Y,Y
+2024-10-03,MD,Amerinox,"Camden, NJ",Rick,C209129,,"7ga x 48"" x 216 / 230 / 252""","34,130lbs",2024-10-18,Formule Transit,"Lacolle, QC","$1,400.00",2024-10-28,Y,Y,Y
+2024-10-02,PG,Spectrum Metals,"Warminster, PA",Patrick,P215667,,"430 #4 20ga x 1.813"" x coil","10,679lbs",,,,,,Y,Y,Y
+2024-10-08,PG,Main Steel,"Harmony, PA",Mark,C209141,,"SSH 201LN 1/4 HARD PAPER .050 x 48"" x 120""","35,360lbs",2024-10-23,Essence - Propeller,"Fort Erie, ON","$1,750.00",2024-10-29,Y,Y,Y
+2024-10-21,UT,Amerinox,"Camden, NJ",Rick,C209160,,"SPL 304L HRAP NO PAPER 3/16"" x 48"" x 120""/ 144""/240""","22,287lbs",2024-10-24,Formule Transit,"Lacolle, QC","$1,500.00",2024-10-28,Y,Y,Y
+2024-10-17,PG,Spectrum Metals,"Warminster, PA",Patrick,P215667,,"430 #4 20ga x 1.813"" x coil","3,320lbs",,,,,,Y,Y,Y
+2024-10-08,UT,Polished Metals,"Hillside, NJ",Austin,P215690,,"SSH 304 X 6 4228 REF 12ga / 16ga / 22ga x 48"" x 96""","7,443lbs",,,,,,Y,Y,Y
+2024-10-24,PG,Main Steel,"Harmony, PA",Mark,C209155,,"SSH 304L 2B .063 x 48"" x coil","32,118lbs",2024-10-25,Formule Transit,"Lacolle, QC","$1,850.00",2024-10-29,Y,Y,Y
+2024-10-24,MD,Ta Chen,"Pleasant Prairie, WI",Andrew,P215735,,"SSH 304L 2B 16GA x 72"" x 144""","3,992lbs",2024-10-25,DVL,-,$900.66,2024-11-01,Y,Y,Y
+2024-10-17,UT,Phoenix Tubes,"Bethlehem, PA",Illy,P215711,,"SRT 316L X4 1-1/2"" x 3"" x 1/8"" x 20'","1,079lbs",2024-10-28,Formule Transit,"Lacolle, QC","$1,400.00",2024-11-04,Y,Y,Y
+2024-10-17,MD,Amerinox,"Camden, NJ",Rick,C209148,,"SSH 316L 2B 4228 REF 7ga x 48"" x 229""/ 230""","32,060lbs",,,,,,Y,Y,Y
+2024-10-27,PG,Rolled Alloys,"Fairfield, OH",Jaime,P215732,,"SSH 410 2D PAPER 11ga x 36"" x 120""",298lbs,2024-10-28,DVL,-,$695.00,,Y,Y,Y
+2024-10-29,MD,Leveltek,"Benwood, WV",Kelly,C209158,,"SSH 301L 1/8 HARD PAPER .09 x 48"" x 120""","32,125lbs",2024-10-30,Essence - Ontario Specialized Services,"Lansdowne, ON","$1,850.00",2024-11-04,Y,Y,Y
+2024-10-29,MD,Leveltek,"Benwood, WV",Kelly,C209159,,"SSH 301L 1/8 HARD PAPER .09 x 48"" x 120""","13,975lbs",,,,,,Y,Y,Y
+2024-10-29,MD,Leveltek,"Benwood, WV",Kelly,C209159,,"SSH 301L 1/8 HARD PAPER .09 x 48"" x 120""","45,440lbs",2024-10-31,Essence - Aaron Xpress,,"$1,850.00",2024-11-06,Y,Y,Y
+2024-10-24,PG,Rolled Alloys,"Fairfield, OH",Linda,P215732,,"SSH 410 2D PAPER 11ga x 36"" x 120""",296lbs,2024-10-29,DVL,-,$695.00,2024-11-05,Y,Y,Y
+2024-11-01,UT,RM Creations,"Camden, NJ",Rick,P215726,,"SSH 430 BA ANY LASER 18ga x 48"" x 144""","1,371lbs",2024-11-05,Formule Transit,"Lacolle, QC","$1,400.00",2024-11-13,Y,Y,Y
+2024-10-25,UT,Amerinox,"Camden, NJ",Rick,C209170,,"SSH 304L 2B 4228 REF 7ga x 48"" x  96"" / 120""","20,990lbs",,,,,,Y,Y,Y
+2024-10-25,UT,Ta Chen,"Burlington, NJ",Andrew,P215738,,"SFB 304L HRAP 5/16"" x 1"" x 10-12'",51lbs,,,,,,Y,Y,Y
+2024-10-30,UT,Ta Chen,"Burlington, NJ",Andrew,P215759,,"SPL 316L HRAP NO PAPER 1/4"" x 96"" x 240""","7,144lbs",,,,,,Y,Y,Y
+2024-10-21,UT,Amerinox,"Camden, NJ",Rick,C209161,$300 were added due to retention on customs,"SPL 304L X4 4228 REF 1/4"" x 48"" x 96""/ 120""","17,145lbs",2024-11-05,Formule Transit,"Lacolle, QC","$1,800.00",2024-11-07,Y,Y,Y
+2024-10-28,UT,Amerinox,"Camden, NJ",Rick,C209171,,"SSH 304L 2B PAPER 18ga x 48"" x 96""/ 120""","20,720lbs",,,,,,Y,Y,Y
+2024-11-04,UT,Kingmaker,"Somerset, NJ",Vera,P215769,,"SST 304L MF 3-1/2"" x 7GA x 20'",324lbs,,,,,,Y,Y,Y
+2024-10-17,UT,Penn Stainless,"Quakertown, PA",Cathy,P215714,,"SSH 17-4PH PAPER .063 x 36"" x 120""","1,233lbs",,,,,,Y,Y,Y
+2024-10-23,UT,Yarde Metals,"Southington, CT",Candy,P215729,,"AFB 6063-T5 1/8"" x 3/4"" x 192""",88lbs,2024-11-05,DVL,-,$695.00,2024-11-08,Y,Y,Y
+2024-10-27,CON,Yarde Metals,"Southington, CT",Candy,P215761,,"ARB 2011T3 5/16"" x 12'",476lbs,,,,,,Y,Y,Y
+2024-10-27,MD,Main Steel,"Elk Grove Village, IL",Shawn,C209166,,"SSH 304L 2B PAPER 16ga x 72"" x 144""","3,992lbs",2024-11-06,DVL,-,$950.00,2024-11-13,Y,Y,Y
+2024-10-28,UT,Amerinox,"Camden, NJ",Rick,C209192,,"SPL 304L HRAP NO PAPER 1/4"" x 48"" x 120""","18,840lbs",2024-11-08,Formule Transit,"Lacolle, QC","$1,400.00",2024-11-19,Y,Y,Y
+2024-10-28,UT,Amerinox,"Camden, NJ",Rick,C209172,,"SPL 304L HRAP NO PAPER 1/4"" x 60"" x 120""/ 144""","20,390lbs",,,,,,Y,Y,Y
+2024-10-30,MD,Polished Metals,"Hillside, NJ",Austin,P215757,,"SSH 304 X8 4228 REF 16ga x 60"" x 120""","4,182lbs",,,,,,Y,Y,Y
+2024-10-30,RW,Polished Metals,"Hillside, NJ",Austin,P215763,,"SSH 316L X8 4228 REF 14ga x 48"" x 120""",255lbs,,,,,,Y,Y,Y
+2024-10-30,PG,Phoenix Tubes,"Bethlehem, PA",Illy,P215768,,"STU 304 600grit 2"" x .065"" x 20'",266lbs,2024-11-12,Formule Transit,"Lacolle, QC","$1,400.00",2024-11-19,Y,Y,Y
+2024-11-06,PG,Phoenix Tubes,"Bethlehem, PA",Illy,P215782,,"SRT 304 HRAP 3"" x 5"" x .18"" x 20'",172lbs,2024-11-12,,,,,Y,Y,Y
+2024-10-31,UT,Amerinox,"Camden, NJ",Rick,C209176,,"SSH 304L X4 4228 REF 20ga x 60"" x 120""","19,890lbs",2024-11-12,,,,,Y,Y,Y
+2024-11-05,UT,Amerinox,"Camden, NJ",Rick,C209191,,"SPL 304L HRAP NO PAPER 5/16"" x 60"" x 240""","20,100lbs",2024-11-18,,,,,Y,Y,Y
+2024-11-02,DAN,Amerinox,"Camden, NJ",Rick,C209189,,"SSH 316L 2B 4228 REF 7ga x 48"" x 230""","27,500lbs",2024-11-20,Formule Transit,"Lacolle, QC","$1,400.00",2024-11-19,Y,Y,Y
+2024-11-06,UT,Amerinox,"Camden, NJ",Rick,C209194,"Originally 23,330lbs but sent 3,165lbs ","SPL 316L HRAP NO PAPER 3/16"" x 60"" x 120"" / 160"" / 240""","3,165lbs ",2024-11-18,,,,,Y,Y,Y
+2024-11-05,UT,Ta Chen,"Burlington, NJ",Andrew,P215777,,"SAB 304L HRAP 3"" x 1-1/2"" x 1/4"" x 20'",392lbs,2024-11-19,,,,,Y,Y,Y
+2024-11-13,MD,Laporte,"La Porte, IN",April,C209196 ,,"SSH 301L 1/2 HARD PAPER .075 x 48"" x 120""","32,510lbs ",2024-11-14,Essence,"Sarnia,ON","$1,925.00",2024-11-28,Y,Y,Y
+2024-11-14,MD,Leveltek,"Benwood, WV",Kelly,C209143,,"SSH 301L 1/2 HARD PAPER .125 x 48"" x 190""","26,515lbs ",2024-11-18,Essence,"Lansdowne, ON","$1,850.00",2024-11-22,Y,Y,Y
+2024-11-19,MD,Leveltek,"Benwood, WV",Kelly,C209168,," SSH 301L 1/2 HARD PAPER .090 x 48"" x 156""","32,125lbs",2024-11-20,Essence,"Lansdowne, ON","$1,850.00",2024-11-27,Y,Y,Y
+2024-11-14,UT,Amerinox,"Camden, NJ",Rick,C209204,mario is picking this up,"SSH 304L 2B 4228 REF 7ga x 60"" x 120"" / 206""","17,530lbs",2024-11-21,DLV,-,,,Y,Y,Y
+2024-11-06,UT,Amerinox,"Camden, NJ",Rick,C209194,"Originally 23,330lbs but sent tag # 798143-B first","SPL 316L HRAP NO PAPER 3/16"" x 60"" x 120"" / 160"" / 240""","20,165lbs",2024-11-21,Formule Transit,"Lacolle, QC","$1,500.00",2024-11-22,Y,Y,Y
+2024-11-01,PG,Amerinox,"Camden, NJ",Rick,C010103,,"SSH 304L 2B x 60"" x 120""","1,610lbs",,,,,,Y,Y,Y
+2024-11-12,UT,Phoenix Tubes,"Bethlehem, PA",Illy,P215803,,"SRT 316L X4 1-1/2"" x 3"" x 1/8"" x 20'",348lbs,,,,,,Y,Y,Y
+2024-10-17,UT,Penn Stainless,"Quakertown, PA",Cathy,P215818,,"SPL 2205 HRAP NO PAPER 1/4"" / 3/8"" / 3/16"" x 60"" x 120""","4,525lbs",,,,,,Y,Y,Y
+2024-11-08,UT,Penn Stainless,"Quakertown, PA",Cathy,P215791,,"SPL 2205 3/8"" x 60"" x 120"" / SRB 2205 RT 5"" x 2'","3,433lbs",,,,,,Y,Y,Y
+2024-11-14,MD,Leveltek,"Benwood, WV",Kelly,C209157,,"SSH 301L 1/2 HARD PAPER .090 x 48"" x 120""/ 156""","34,105lbs",2024-11-25,Essence,"Lansdowne, ON","$1,850.00",2024-11-29,Y,Y,Y
+2024-11-25,MD,Leveltek,"Benwood, WV",Kelly,C209144,,"SSH 301L 1/2 HARD PAPER .125 x 48"" x Coil ","34,405lbs",2024-11-26,Essence - Daytona Freight Systems,"Lansdowne, ON","$1,850.00",2024-11-29,Y,Y,Y
+2024-11-25,MD,Leveltek,"Benwood, WV",Kelly,C209144,,"SSH 301L 1/2 HARD PAPER .125 x 48"" x Coil ","27,135lbs",,Essence - Daytona Freight Systems,"Lansdowne, ON","$1,850.00",2024-11-29,Y,Y,Y
+2024-11-08,LJO,Main Steel,"Harmony, PA",Mark,C201987,,"SSH 304L 2B PAPER .063 x 48"" x 120""","7,540lbs",2024-11-27,Essence - Bestway ,"Lansdowne, ON","$1,750.00",2024-12-03,Y,Y,Y
+2024-11-08,LJO,Main Steel,"Harmony, PA",Mark,C201988,,"SSH 304L 2B PAPER .063 x 60"" x 144""","10,660lbs",,,,,,Y,Y,Y
+2024-11-08,PG,Main Steel,"Harmony, PA",Mark,C209213,,"SSH 304L 2B .63 x 60"" x coil","22,202lbs",,,,,,Y,Y,Y
+2024-11-19,IX,Darby Wire,"Philadelphia, PA",Dan,P215828,mix with amerinox / made in china,mesh wire roll - 4' x 4' skid,259lbs,2024-11-27,Formule Transit,"Lacolle, QC","$1,400.00",2024-12-02,Y,Y,Y
+2024-11-20,UT,Amerinox,"Camden, NJ",Rick,C209210,," SSH 304L 2B 7ga x 60"" x 120"" / SSH 304L 2B 4228 7ga x 60"" x 170""","19,350lbs",,,,,,Y,Y,Y
+2024-11-20,MD,Amerinox,"Camden, NJ",Rick,C209211,,304L 7ga x 48 x 157 / 193 / 252,"13,610lbs",,,,,,Y,Y,Y
+2024-11-20,MD,Amerinox,"Camden, NJ",Rick,P213403,,Rejects,"7,380lbs",,,,,,Y,Y,Y
+2024-11-26,MD,Amerinox,"Camden, NJ",Rick,C209183,," SSH 316L X4 4228 10ga x 60"" x 120"""," 18,590lbs",2024-12-02,Formule Transit,"Lacolle, QC","$1,400.00",2024-12-03,Y,Y,Y
+2024-11-14,UT,Amerinox,"Camden, NJ",Rick,C209203,,"SPL 304L X4 4228 REF 3/16"" x 60"" x 120""","15,210lbs",,,,,,Y,Y,Y
+2024-11-20,MD,Amerinox,"Camden, NJ",Rick,C209212,,"304L 7ga x 48 x 159"" / 161"" / 164""  / 187"" / 216""","9,000lbs",,,,,,Y,Y,Y
+2024-11-20,UT,Ta Chen,"Burlington, NJ",Andrew,P215834,,"SRB 303 ST 5/8"" x 12-14'","2,036lbs",,,,,,Y,Y,Y
+2024-11-26,PG,Main Steel,"Harmony, PA",Mark,C209214,,"SSH 201LN 1/4 HARD PAPER .030 x 48"" x 120""","18,410lbs",2024-12-02,DLV,-,"$1,195.00",,Y,Y,Y
+2024-11-19,MD,Main Steel,"Harmony, PA",Mark,C209208  ,,"SSH 301L 1/8 HARD PAPER .040 x 48"" x 120""","30,390lbs",2024-12-03,Essence - Daytona freight ,"Lansdowne, ON","$1,750.00",2024-12-05,Y,Y,Y
+2024-11-07,MD,Leveltek,"Benwood, WV",Kelly,C209132,,"SSH 201LN 1/4 HARD PAPER .125 x 48"" x 120""","27,700lbs",2024-12-03,Essence - Bronco,"Lansdowne, ON","$1,850.00",2024-12-05,Y,Y,Y
+2024-10-31,MD,Main Steel,"Elk Grove Village, IL",Shawn,C209151,,"SSH 301L 1/4 HARD PAPER .075 x 48"" x 120""","38,910lbs",2024-12-04,Essence - Jatsun Logistics,"Windsor, ON ","$1,800.00",2024-12-06,Y,Y,Y
+2024-11-14,MD,Amerinox,"Camden, NJ",Rick,C209184,,"316L #4 1/4"" x 60 x 120""","19,000lbs",2024-12-06,Formule Transit,"Lacolle, QC","$1,400.00",2024-12-09,Y,Y,Y
+2024-11-21,PG,Polished Metals,"Hillside, NJ",Austin,P215838,," SSH 304 X 6 4228 REF 11ga x 48"" x 96""/ 120"" /  SSH 304 X8 4228 REF 16ga x 60"" x 120""","1,633lbs",2024-12-06,,,,,Y,Y,Y
+2024-11-26,PG,Rigidized Metals,"Buffalo, NY",Chris <ChrisSchiller@rigidized.com,P215857 ,,"SSH 304 2B 6WL 16ga x 60"" x 120""",324lbs,2024-12-04,DLV,-,$845.00,2024-12-11,Y,Y,Y
+2024-11-25,SMD,Rolled Alloys,"Toledo, OH",Linda <lhaley@rolledalloys.ca,P215850,,"SPL 309 3/16 x 48"" x 144""","	1,236lbs",2024-12-04,DLV,-,$745.00,,Y,Y,Y
+2024-11-26,UT,Rolled Alloys,"Toledo, OH",,P215861,,"SPL 310S 3/16"" x 48"" x 96""",549lbs,2024-12-04,,,,,Y,Y,Y
+2024-12-05,UT,Ta Chen,"Pleasant Prairie, WI",Andrew,P215888,," ASH 5052-H32 PAPER 0.250"" x 60"" x 144""","21,824lbs",2024-12-09,Essence,,"$1,550.00",,Y,Y,Y
+2024-12-02,MD,Main Steel,"Harmony, PA",Mark,C209234,," SSH 201LN 1/4 .060 x 48"" x 120""","29,690lbs",2024-12-10,Formule Transit,"Lacolle, QC","$1,850.00",,Y,Y,Y
+2024-10-17,MD,LaPorte,"La Porte, IN",April Natale,C209150 ,Interstate shipment,"SSH 301L #4 1/4 HARD PAPER .075 x 48"" x Coil"," 31,620lbs",2024-12-10,DLV,-,"$1,650.00 USD",,Y,Y,Y
+2024-10-30,MD,Main Steel,"Harmony, PA",Mark,C209173  ,reject coil - Interstate shipment,"SSH 301L #4 1/4 HARD PAPER .075 x 48"" x Coil ","32,980lbs",2024-12-10,DLV,-,"$1,625.00 USD",,Y,Y,Y
+2024-11-26,MD,Amerinox,"Camden, NJ",Rick,C209222  ,,"SSH 304L X4 4228 REF 20ga x 36"" x 144"""," 10,815lbs",2024-12-11,Formule Transit,"Lacolle, QC","$1,500.00",,Y,Y,Y
+2024-10-29,UT,Phoenix Tubes,"Bethlehem, PA",Illy,P215745,,"SST 304 HRAP 4"" x 3/16"" x 94""","10,050lbs",,,,,,Y,Y,Y
+2024-12-04,UT,Independent Stainless ,"Egg Harbor, NJ",Dean Sharon,P215885,,"SFB 304 S/E 1/4"" x 2"" x 16' ","1,568lbs",,,,,,Y,Y,Y
+2024-11-15,MD,LaPorte,"La Porte, IN",April Natale,C209038,Interstate shipment," SSH 301L 1/2 HARD PAPER .075 x 48"" x Coil"," 34,125lbs",2024-12-16,DLV,-,"$1,675.00",,Y,Y,Y
+2024-11-20,MD,LaPorte,"La Porte, IN",April Natale,C209010,Interstate shipment," SSH 301L 1/2 HARD PAPER .075 x 48"" x Coil"," 30,685lbs",2024-12-16,DLV,-,"$1,675.00",,Y,Y,Y
+2024-11-19,MD,LaPorte,"La Porte, IN",April Natale,C208944,Interstate shipment," SSH 301L 1/2 HARD PAPER .075 x 48"" x Coil","23,725lbs",2024-12-16,DLV,-,"$1,675.00",,Y,Y,Y
+2024-12-02,PG,Main Steel,"Harmony, PA",Mark,C209235,,"SSH 304L 2B PAPER .063 x 60"" x Coil ","44,960lbs",2024-12-16,Formule Transit,"Lacolle, QC","$1,850.00",,Y,Y,Y
+2024-11-19,MD,LaPorte,"La Porte, IN",April Natale,C209209,," SSH 301L 1/2 HARD PAPER .075 x 48"" x 120""","31,555lbs",2024-12-16,Essence - Sage Freight,"Lansdowne, ON","$1,925.00",,Y,Y,Y
+2024-11-25,MD,LaPorte,"La Porte, IN",April Natale,C209221,," SSH 301L 1/2 HARD PAPER .075 x 48"" x 120"""," 32,150lbs",2024-12-17,Essence - Distribution Malbert ,"Lansdowne, ON","$1,925.00",,Y,Y,Y
+2024-11-25,MD,LaPorte,"La Porte, IN",April Natale,C209221,," SSH 301L 1/2 HARD PAPER .075 x 48"" x 120""","33,050lbs",2024-12-18,Essence - Canadian Flatbeds,"Lansdowne, ON","$1,925.00",,Y,Y,Y
+2024-12-03,MD,Amerinox,"Camden, NJ",Rick,C209237  ,,"SSH 316L 2B 4228 REF 7ga x 48"" x 230""","27,720lbs",2025-01-03,Formule Transit,"Lacolle, QC","$1,400.00",2025-01-10,Y,Y,Y
+2024-12-06,UT,Ta Chen,"Burlington, NJ",Andrew,P215900,," SFB 304L HRAP 5/16"" x 2"" x 10-12'",51lbs,,,,,,Y,Y,Y
+2024-12-13,BL,Ta Chen,"Burlington, NJ",Andrew,P215916,,"316L 1/4"" x 48"" x 120""","3,000lbs",,,,,,Y,Y,Y
+2024-12-10,MD,Amerinox,"Camden, NJ",Rick,C209246,,"SSH 316L, 7ga x 48""  x 230 / 252""","27,235lbs",2025-01-06,Formule Transit,"Lacolle, QC","$1,300.00",2025-01-08,Y,Y,Y
+2024-12-16,MD,Amerinox,"Camden, NJ",Rick,C209255,,"SSH 316L, 4228 7ga x 60"" x 120""","20,840lbs",2026-01-07,Formule Transit,"Lacolle, QC","$1,400.00",2025-01-14,Y,Y,Y
+2024-12-16,UT,Polished Metals,"Hillside, NJ",Mark,P215862,,"SSH 316L X8 12ga/14ga/16ga x 48"" x 120""",402lbs,,,,,,Y,Y,Y
+2024-12-16,UT,Polished Metals,"Hillside, NJ",Mark,P215932,,"SSH 304 X8 18ga x 60"" x 96""/120""","5,464lbs",,,,,,Y,Y,Y
+2024-12-13,MD,Main Steel,"Harmony, PA",Mark,C209256,," SSH 201LN X4 4228 .050 x 48"" x 120""","31,332lbs",2026-01-07,Formule Transit,"Lansdowne, ON","$1,850.00",2025-01-10,Y,Y,Y
+2024-12-13,MD,Main Steel,"Harmony, PA",Mark,C209256,," SSH 201LN X4 4228 .050 x 48"" x 120""","33,434lbs",2026-01-07,Formule Transit,"Lansdowne, ON","$1,850.00",2025-01-09,Y,Y,Y
+2024-12-13,MD,Main Steel,"Harmony, PA",Mark,C209254,,"SSH 201LN 2B PAPER .060 x 48"" x 96""","32,120lbs",2026-01-08,Formule Transit,"Lansdowne, ON","$1,850.00",2025-01-29,Y,Y,Y
+2024-12-02,MD,Main Steel,"Harmony, PA",Mark,C209223,,"SSH 304L 2B 16ga x 60"" x 144""","13,416lbs",2026-01-08,Essence - Mach 10,"Buffalo, NY","$1,350.00",2025-01-29,Y,Y,Y
+2024-12-02,MD,Main Steel,"Harmony, PA",Mark,C209224,,"SSH 304L 2B 16ga x 48"" x 120""","13,042lbs",,,,,,Y,Y,Y
+2025-01-03,MD,Leveltek,"Benwood, WV",Kelly,C209264,," SSH 301L 1/8 HARD PAPER .125 x 48"" x 159""","31,515lbs",2025-01-10,Essence - Challenger Motor ,"Lansdowne, ON","$1,850.00",2025-01-22,Y,Y,Y
+2024-12-02,MD,Leveltek,"Benwood, WV",Kelly,C209232,,"SSH 201LN 1/4 HARD PAPER 7ga x 48"" x 96""/120""","35,040lbs",2025-01-13,Essence - Challenger Motor ,"Lansdowne, ON","$1,850.00",2025-01-21,Y,Y,Y
+2025-01-09,UT,North American Stainless,"Wrightsville, PA ",Christine ,P216008,make pickup appointment,"SPL 304L HRAP NO PAPER 7/8"" x 61.4"" x 240""","7,640lbs",2025-01-14,Formule Transit,"Lacolle, QC","$1,500.00",2025-01-20,Y,Y,Y
+2024-12-03,MD,Amerinox,"Camden, NJ",Rick,C209270,,"SPL 304L HRAP NO PAPER 3/16"" x 60"" x 96 /  120"" / 144""","20,060lbs",,,,,,Y,Y,Y
+2025-01-09,UT,Kingmaker,"Somerset, NJ",Vera,P216014,,"STU 304 WD 5"" x .065"" x 20'",377lbs,2025-01-15,Formule Transit,"Lacolle, QC","$1,400.00",2025-01-21,Y,Y,Y
+2025-01-10,UT,Kingmaker,"Somerset, NJ",Vera,P216025,,"STU 304 X4 1-1/4"" x .065"" x 20'","2,490lbs",,,,,,Y,Y,Y
+2024-12-06,UT,Amerinox,"Camden, NJ",Rick,C209272,," SPL 304L HRAP NO PAPER 1/4"" x 60"" x 120""/ 144""","21,860lbs",,,,,,Y,Y,Y
+2025-01-06,AA,Ta Chen,"Burlington, NJ",Andrew,P215990,,SBM S BEAM 304L S3 5.7# 20-24',136lbs,2025-01-16,Formule Transit,"Lacolle, QC","$1,500.00",,Y,Y,Y
+2025-01-13,UT,Ta Chen,"Burlington, NJ",Andrew,P216034,," SCH 304L HRAP 4"" x 2-1/2"" x 1/2"" x 20' ",274lbs,,,,,,Y,Y,Y
+2025-01-15,UT,Ta Chen,"Burlington, NJ",Andrew,P216044,," SPL 316L HRAP NO PAPER 3/8"" x 60"" x 144""","2,969lbs",,,,,,Y,Y,Y
+2024-12-03,MD,Amerinox,"Camden, NJ",Rick,C209269,,"SPL 304L HRAP NO PAPER 3/16"" x 48""x 120""x 240""","18,790lbs",,,,,,Y,Y,Y
+2025-01-08,UT,Materials Technlogy Solution,"Bensalem, PA ",Sahar Barkai,P215999,,"ASH 5083-H116 PAPER 0.188"" x 48"" x 240""",750lbs,2025-01-17,Formule Transit,"Lacolle, QC",,,Y,Y,Y
+2025-01-03,MD,Leveltek,"Benwood, WV",Kelly,C209265,,"SSH 201LN 1/4 HARD PAPER .090 x 48"" x 120""/ 144""","27,205lbs",2025-01-20,Essence,"Lansdowne, ON","$1,850.00",2025-01-24,Y,Y,Y
+2025-01-17,UT,Phoenix Tubes,"Bethlehem, PA",Illy,P216065,," SST 304L MF 5"" x 3/8"" x 20' "," 3,294lbs",2025-01-22,Alain Giroux,"Lacolle, QC","$1,400.00",2025-01-27,Y,Y,Y
+2025-01-17,UT,Ta Chen,"Burlington, NJ",Andrew,P216066,," SCH 304 HRAP 8"" x 2.26"" x .22"" x 20' /  SBM 304L W10 15# 20'","9,038lbs",,,,,,Y,Y,Y
+2025-01-15,UT,Amerinox,"Camden, NJ",Rick,C209288,,"SPL 304L HRAP NO PAPER 3/16"" x 60"" x 96""/ 120""","19,830lbs",2025-01-23,Formule Transit,"Lacolle, QC","$1,400.00",2025-01-24,Y,Y,Y
+2025-01-20,UT,Kingmaker,"Somerset, NJ",Vera,P216081,," SST 304 X4 1-1/4"" x .065"" x 20' /  STU 304 X4 1"" x 1/8"" x 20'","2,260lbs",,,,,,Y,Y,Y
+2025-01-17,PG,Main Steel,"Harmony, PA",Mark,C209290,,"SSH 304L 2B .063 x 48"" x 380'","39,500lbs",2025-01-27,Formule Transit,"Lacolle, QC","$1,850.00",2025-02-13,Y,Y,Y
+2024-12-23,UT,Ta Chen,"Pleasant Prairie, WI",Andrew,P215962,75 WAIT FEE,"SFB 304L S/E 5/16"" x 1"" x 12'",247lbs,2025-01-28,DLV,-,$695.00,2025-02-03,Y,Y,Y
+2025-01-13,MD,Main Steel,"Harmony, PA",Mark,C209279 ,,"SSH 201LN #80 1/4 HARD NITTO .075 x 48"" x Coil","27,832lbs",2025-01-28,Formule Transit,"Lacolle, QC","$1,850.00",2025-02-06,Y,Y,Y
+2025-01-17,PG,Main Steel,"Harmony, PA",Mark,C209290,,"SSH 304L 2B .063 x 48"" x 380'","11,814lbs",,,,,,Y,Y,Y
+2024-11-22,MD,NAS,"Guelph, ON",Christine,P215847,,"SSH 316L 11ga x 48"" x Coil / SSH 316L 11ga x 60"" x Coil ","30,000lbs",2025-01-28,Essence,"Buffalo, NY","$2,950.00",2025-01-29,Y,Y,Y
+2024-11-18,UT,ATI Materials,"Brackenridge, PA",Bill,P215826,,"SPL 316L HRAP NO PAPER 1/4"" x 96"" x 192""","51,434lbs",2025-01-29,,,,,,,
+2025-01-14,MD,Phoenix Tubes,"Bethlehem, PA",Illy,P216038,,"304, 4"" X 3/16 X 88""","9,399lbs",2025-01-29,Formule Transit,"Lansdowne, ON","$1,400.00",2025-02-03,Y,Y,Y
+2025-01-20,PG,Straub Metal,"Ashly, PA",Alyssa,P216084,,"SSH 409 2D NO PAPER 11ga x 48"" x 96""","5,120lbs",,,,,,Y,Y,Y
+2024-12-24,MD,Ta Chen,"Burlington, NJ",Andrew,P216114,,"SSH 304L 2B 4228 REF 10ga x 72"" x 120""","3,400lbs",2025-01-30,Formule Transit,"Lansdowne, ON","$1,400.00",2025-02-03,Y,Y,Y
+2024-12-27,CON,Ta Chen,"Burlington, NJ",Andrew,P216128,,"SCH 304L 5"" x 1-3/4"" x .188"" x 20'",670lbs,,,,,,Y,Y,Y
+2024-12-24,UT,Ta Chen,"Burlington, NJ",Andrew,P216121,,"SCH 304L HRAP C6 -1.92"" x .2"" x .343"" x 20",410lbs,,,,,,Y,Y,Y
+2025-01-24,UT,Amerinox,"Camden, NJ",Rick,C209299,," SPL 316L HRAP 1/4"" x 60"" x 120"" ","19,185lbs",,,,,,Y,Y,Y
+2025-01-24,UT,Amerinox,"Camden, NJ",Rick,C209301,," SSH 316L 2B 4228 REF 7ga x 48"" x 96"" / 120""","3,015lbs",,,,,,Y,Y,Y
+2025-01-28,UT,Amerinox,"Camden, NJ",Rick,C209316,,"SPL 304L HRAP NO PAPER 1/4"" x 48"" x 96""","13,200lbs",2025-01-31,Formule Transit,"Lacolle, QC","$1,400.00",2025-02-04,Y,Y,Y
+2025-01-24,UT,Amerinox,"Camden, NJ",Rick,C209296,," SPL 304L HRAP NO PAPER 1/4"" x 60"" x 120""","21,250lbs",,,,,,Y,Y,Y
+2025-01-23,AA,Polished Metals,"Hillside, NJ",Mark,P216104,,"16ga x 48"" x 96""","2,100lbs",,,,,,Y,Y,Y
+2025-01-21,RW,Polished Metals,"Hillside, NJ",Mark,P216103,,"316 14ga x 48"" x 120""",200lbs,,,,,,Y,Y,Y
+2025-01-28,MD,Leveltek,"Benwood, WV",Kelly,C209313,,"SSH 201LN 1/4 HARD PAPER .125 x 48 x 120""","29,140lbs",2025-01-31,Essence,"Lansdowne, ON","$1,850.00",2025-02-05,Y,Y,Y
+2025-01-30,MD,Leveltek,"Benwood, WV",Kelly,C209314,,"SSH 201LN 1/4 HARD PAPER .090 x 48 x 120""","30,965lbs",2025-01-31,Essence,"Niagara Falls, ON","$1,850.00",2025-02-05,Y,Y,Y
+2025-01-30,UT,Main Steel,"Harmony, PA",Mark,C209315,,"SSH 304L 2B .063 x 60"" x 420'","41,688lbs",2025-02-03,Formule Transit,"Lansdowne, ON","$1,850.00",2025-02-06,Y,Y,Y
+2025-01-22,MD,Amerinox,"Camden, NJ",Rick,C209295,,"SSH 316L 2B 4228 7ga x 48"" x 159"" / 170"" / 230""","24,080lbs",2025-02-05,Alain Giroux,"Lacolle, QC","$1,650.00",2025-02-11,Y,Y,Y
+2025-01-24,UT,Amerinox,"Camden, NJ",Rick,C209300,,"SSH 316L 2B PAPER 10ga x 60"" x 240"" ","11,390lbs",,,,,,Y,Y,Y
+2024-12-31,MD,Ta Chen,"Burlington, NJ",Andrew,P216164,,"SSH 304L 2B 4228 REF 10ga x 72"" x 120""","3,438lbs",,,,,,Y,Y,Y
+2025-01-27,BEN,Penn Stainless,"Quakertown, PA",Cathy,P216122 ,,"SPL 2205 .188"" x 60"" x 120"" / SRB 2205 1.5"" x 1'6""","1,725lbs",,,,,,Y,Y,Y
+2025-02-03,UT,Penn Stainless,"Quakertown, PA",Cathy,P216123 ,," SPLM 2205 .375"" x 60"" x 120""","2,472lbs",,,,,,Y,Y,Y
+2024-01-03,MD,Ta Chen,"Pleasant Prairie, WI",Andrew,P216172,,"SSH 304L 2B 16ga x 60"" x 72""x 144"" ","10,524lbs",2025-02-04,DLV,-,"$1,038.04",2025-02-06,Y,Y,Y
+2025-02-06,MD,North American Stainless,"Wrightsville, PA ",Christine ,P216210,make pickup appointment,"SPL 304L HRAP 3/16"" x 60"" x Coil","19,380lbs",2025-02-10,DLV,-,"$1,356.00",2025-02-25,Y,Y,Y
+2025-02-06,UT,Ta Chen,"Pleasant Prairie, WI",Andrew,P216202,," SPL 304H HRAP NO PAPER 1/2"" x 96"" x 240"""," 6,932lbs",2025-02-11,Essence,Sarnia ON ,"$1,550.00",2025-02-20,Y,Y,Y
+2025-01-22,MD,Amerinox,"Camden, NJ",Rick,C209293,,"SSH 316L 2B 4228 7ga x 48"" x 230""","26,290lbs",2025-02-11,Formule Transit,"Lansdowne, ON","$1,400.00",2025-02-28,Y,Y,Y
+2025-01-31,UT,Amerinox,"Camden, NJ",Rick,C209318,,"SSH 304L 2B 4228 REF 7ga x 60"" x 120""/ 206"" ","18,130lbs",,,,,,Y,Y,Y
+2025-01-30,AA,Polished Metals,"Hillside, NJ",Mark,P216149,," SSH 304 X 6 4228 REF 22ga x 48"" x 120""",509lbs,,,,,,Y,Y,Y
+2025-01-31,SM,Yarde Metals,"Southington, CT",Candy,P216165,,"AIB 6061-T6 8"" x 4"" x 0.27"" x 25'",795lbs,2025-02-12,Essence - Pristine Line Haul,"Lacolle, QC",$950.00,2025-02-19,Y,Y,Y
+2025-02-07,MD,Main Steel,"Harmony, PA",Mark,C209340,,"SSH 201LN 1/4 HARD PAPER .060 x 48 x 144""","33,260lbs",2025-02-13,Essence - Aaron Xpress Inc,"Lansdowne, ON","$1,750.00",2025-02-25,Y,Y,Y
+2025-02-03,UT,Rolled Alloys,"Maumee, OH ",Linda,P216175,,"SPL 310S HRAP NO PAPER 1"" x 60"" x 120"" ","2,133lbs",2025-02-17,DLV,-,$895.00,2025-02-21,Y,Y,Y
+2025-02-10,UT,Amerinox,"Camden, NJ",Rick,C209346,," SPL 304L HRAP NO PAPER 3/16"" x 48"" x 120""","18,140lbs",2025-02-18,Formule Transit,"Lansdowne, ON","$1,500.00",2025-02-28,Y,Y,Y
+2025-02-07,BEN,Penn Stainless,"Quakertown, PA",Cathy,P216215  ,,"SSH 17-4 16ga 36"" x 120""",986lbs,,,,,,Y,Y,Y
+2025-01-29,UT,Spectrum Metals,"Warminster, PA",Patrick,P216142,," SSH 304 2B NO PAPER 22ga x 5.635"" x Coil","9,000lbs",,,,,,Y,Y,Y
+2025-02-07,UT,Amerinox,"Camden, NJ",Rick,C209336,," SSH 304L 2B 4228 REF 7ga x 60"" x 206"" ","21,180lbs",2025-02-19,Formule Transit,"Lacolle, QC","$1,400.00",2025-02-28,Y,Y,Y
+2025-02-13,UT,Amerinox,"Camden, NJ",Rick,C209343,," SPL 304L HRAP NO PAPER 3/16"" x 72"" x 240""","17,870lbs",,,,,,Y,Y,Y
+2025-02-13,MD,Ta Chen,"Burlington, NJ",Andrew,P216280,,"SSH 304L 2B PAPER 10ga x 72"" x 120""","5,444lbs",,,,,,Y,Y,Y
+2025-02-13,PG,Mirror Metals,"Oxnard, CA",Eric Polk,P216281,," SSH 316L X10 4228 REF 14ga /16ga x 48"" x 120""",688lbs,2025-02-20,Essence - Polaris Transportation ,"Sarnia, ON ","$1,950.00",2025-03-04,Y,Y,Y
+2025-02-12,CON,Materials Technology Solutions,"New Orleans, LA",Scott Ringle ,P216266 ,,"APL  x 48"" x 96",425lbs,2025-02-21,DVL,-,$950.00,2025-03-04,Y,Y,Y
+2025-02-12,MD,Maryland Metals,"Sparrows Point, MD",Roxanne Riggen,P216238  ,make pickup appointment,"APL PAPER x 48"" x 96","29,400lbs",2025-02-25,Formule Transit,"Lansdowne, ON","$1,850.00",2025-02-27,Y,Y,Y
+2025-01-24,UT,Amerinox,"Camden, NJ",Rick,C209299,," SPL 316L HRAP 1/4"" x 60"" x 120"" ","1,555lbs",2025-02-26,Alain Giroux,"Lacolle, QC","$1,400.00",2025-03-03,Y,Y,Y
+2025-02-15,UT,Amerinox,"Camden, NJ",Rick,C209351,," SPL 304L 3/16"" x 60"" x 120""","18,990lbs",,,,,,Y,Y,Y
+2025-02-20,UT,Amerinox,"Camden, NJ",Rick,C209354,," SSH 316L 2B 4228 REF 7ga x 60"" x 96"" / 120"" / 240""","20,710lbs",,,,,,Y,Y,Y
+2025-02-18,SM,Ta Chen,"Burlington, NJ",Andrew,P216300,,"SCH 304 HRAP 6"" x 2.034"" x .314"" x 20'",452lbs,,,,,,Y,Y,Y
+2025-02-20,UT,Ta Chen,"Burlington, NJ",Andrew,P216335,,"SCH 316L HRAP 1"" x 2"" x 1/4"" x 20'",64lbs,,,,,,Y,Y,Y
+2025-02-25,UT,Kingmaker,"Somerset, NJ",Vera,P216354,Uta took care of this one ," STU 304 X4 2-1/4"" x .065"" x 20'",455lbs,,DLV,-, - ,,Y,Y,Y
+2025-02-20,MD,Main Steel,"Elk Grove Village, IL",Shawn,C209327,,"SSH 201LN 1/4 .090 x 48 x 120""","29,505lbs",2025-03-03,Essence - Jaguar,"Fort Erie, ON ","$2,225.00",2025-03-17,Y,Y,Y
+2025-02-24,UT,Main Steel,"Harmony, PA",`1,C209358,,"SSH 201LN 1/4 HARD PAPER .042 x 48 x 120""","26,450lbs",2025-03-04,Essence - Aaron Xpress ,"Fort Erie, ON ","$1,925.00",2025-03-17,Y,Y,Y
+2025-02-21,UT,Amerinox,"Camden, NJ",Rick,C209363,,"SPL 316L HRAP NO PAPER 3/16"" x 60"" x 240""","16,985lbs",2025-03-06,Alain Giroux,"Lacolle, QC","$1,400.00",2025-03-10,Y,Y,Y
+2025-01-31,UT,Amerinox,"Camden, NJ",Rick,C209361,,,"19,455lbs",,,,,,Y,Y,Y
+2025-02-21,UT,Spectrum Metals,"Warminster, PA",Patrick,P216284,," SCL 304 2B 20ga x 4-3/4"" x Coil ","1,940lbs",,,,,,Y,Y,Y
+2025-01-31,UT,Amerinox,"Camden, NJ",Rick,C209298,,316L #4 11ga x 60 x 144 / 120,"10,600lbs",2025-03-06,Formule Transit,"Lacolle, QC","$1,500.00",2025-03-10,Y,Y,Y
+2025-02-21,UT,Amerinox,"Camden, NJ",Rick,C209362,,"SPL 316L HRAP NO PAPER 3/16"" x 48""x 240""","14,110lbs",,,,,,Y,Y,Y
+2025-02-28,AA,Ta Chen,"Burlington, NJ",Andrew,P216387,,"SFB 304L HRAP 1"" x 6"" x 12""",274lbs,,,,,,Y,Y,Y
+2025-02-21,PG,Ta Chen,"Burlington, NJ",Andrew,P216389  ,,"SCH 316L HRAP 1"" x 2"" x 1/4"" x 20'",156lbs,,,,,,Y,Y,Y
+2025-02-25,UT,Stulz Sickles Steel Company,"Burlington, NJ",Shannon,P216356,," CPL X120Mn12 1/4"" x 48"" x 96"" ","2,940lbs",,,,,,Y,Y,Y
+2025-01-15,UT,Amerinox,"Camden, NJ",Rick,C209289,,"SSH 316L X4 4228 REF 12ga x 60"" x 120""","14,310lbs",2025-03-10,Formule Transit,"Lacolle, QC","$1,300.00",2025-03-12,Y,Y,Y
+2025-02-25,UT,Amerinox,"Camden, NJ",Rick,C209360,,"SPL 304L HRAP NO PAPER 1/4"" x 60"" x 170""","19,230lbs",,,,,,Y,Y,Y
+2025-02-28,UT,Main Steel,"Harmony, PA",Mark,C209369 ,,"SSH 304L 2B PAPER 0.063"" x 60"" x 420""","20,852lbs ",2025-03-11,Formule Transit,"Fort Erie, ON ","$1,850.00",2025-03-18,Y,Y,Y
+2025-03-03,UT,Main Steel,"Harmony, PA",Mark,C209374 ,," SSH 304L 2B NO PAPER 0.063"" x 48"" x 380""","8,108lbs ",,,,,,Y,Y,Y
+2025-03-03,UT,Main Steel,"Harmony, PA",Mark,C209374 ,," SSH 304L 2B NO PAPER 0.063"" x 48"" x 380""","40,468lbs ",2025-03-11,Formule Transit,"Lansdowne, ON","$1,850.00",2025-03-14,Y,Y,Y
+2025-03-10,CON,Materials Technology Solutions,"New Orleans, LA",Scott Ringle ,P216445,," APL 5086-H116 PAPER 0.25"" x 60"" x 184""",421lbs,2025-03-13,Essence  ,"Lansdowne, ON","$2,200.00",2025-03-26,Y,Y,Y
+2025-02-03,MD,Main Steel,"Elk Grove Village, IL",Shawn,C209321,,"SSH 304L 2B PAPER 16ga x 72"" x 144""","10,524lbs",2025-03-13,Essence - Transport Simon Lessard,"Windsor, ON","$1,450.00",2025-03-27,Y,Y,Y
+2025-02-03,UT,Amerinox,"Camden, NJ",Rick,C209297,,316L #4 11ga x 48 x 144 / 156 / 120,"16,000lbs",2025-03-14,Essence - Drivex,"Lansdowne, ON","$1,900.00",2025-03-20,Y,Y,Y
+2025-02-20,UT,Amerinox,"Camden, NJ",Rick,C209365,,"SPL 304 X4 4228 REF 3/16"" x 60"" x 120""","7,940lbs",,,,,,Y,Y,Y
+2025-03-06,MD,Main Steel,"Harmony, PA",Mark,C209375,,"SSH 201LN 1/4 HARD PAPER .042 x 48 x 120""","33,010lbs",2025-03-17,Essence - Jaguar,"Lansdowne, ON","$1,750.00",2025-03-20,Y,Y,Y
+2025-03-03,UT,Amerinox,"Camden, NJ",Rick,C209364 ,non-polished part," SPL 316L HRAP  1/4"" x 60"" x 144""","8,285lbs",2025-03-18,Formule Transit,"Lansdowne, ON","$1,500.00",2025-03-21,Y,Y,Y
+2025-03-08,UT,Amerinox,"Camden, NJ",Rick,C209367,,"SSH 316L 2B PAPER 11ga x 48"" x 240""","14,175lbs",,,,,,Y,Y,Y
+2025-03-03,MD,Amerinox,"Camden, NJ",Rick,C209386 ,," SSH 304L 2B PAPER 18ga x 36"" x 120""","9,625lbs",,,,,,Y,Y,Y
+2025-03-12,RWE,Ta Chen,"Burlington, NJ",Andrew,P216463 ,,"SCH 304L  4"" x 1-3/4"" x 1/4"" x 20'",242lbs,,,,,,Y,Y,Y
+2025-03-11,RWE,Penn Stainless,"Quakertown, PA",Cathy,P216454 ,,"SRB 440C 3"" x 12-14'",626lbs,,,,,,Y,Y,Y
+2025-02-10,MD,Amerinox,"Camden, NJ",Rick,C209359 ,,"SSH 316L 2B 4228 REF 7ga x 48"" x 251""","40,510lbs",2025-03-20,Formule Transit,"Lacolle, QC","$1,300.00",2025-03-25,Y,Y,Y
+2025-03-07,MD,Main Steel,"Elk Grove Village, IL",Shawn,C209383 ,," SSH 201LN 1/4 HARD PAPER .156 x 48"" x 120""","34,100lbs",2025-03-24,Essence - BTM,"Windsor, ON","$2,225.00",2025-04-01,Y,Y,Y
+2025-02-05,MD,Main Steel,"Elk Grove Village, IL",Shawn,C209330,,"SSH 201LN #80 1/4HARD 4228 .075 x 48"" x 120""","29,500lbs ",2025-03-25,Essence - Trans Inter F&M,"Sarnia, ON ","$2,225.00",2025-03-27,Y,Y,Y
+2025-03-03,AA,Polished Metals,"Hillside, NJ",Austin,P216395,,"SSH 304 X 6 4228 16ga x 48"" x 96""","3,669lbs",2025-03-26,Formule Transit,"Lacolle, QC","$1,400.00",2025-03-31,Y,Y,Y
+2025-03-05,UT,Polished Metals,"Hillside, NJ",Austin,P216412,,"SSH 304 X 6 4228 REF 22ga x 48"" x 96""",407lbs,,,,,,Y,Y,Y
+2025-03-10,UT,Amerinox,"Camden, NJ",Rick,C209384,," SPL 304L X4 4228 REF 3/16"" x 60"" x 120""","20,057lbs",,,,,,Y,Y,Y
+2025-03-03,UT,Amerinox,"Camden, NJ",Rick,C209364 ,polished part," SPL 316L HRAP  1/4"" x 60"" x 144""","2,080lbs",,,,,,Y,Y,Y
+2025-03-03,UT,Amerinox,"Camden, NJ",Rick,C209289,last part,,"2,775lbs",,,,,,Y,Y,Y
+2025-02-07,UT,Amerinox,"Camden, NJ",Rick,C209341,," SPL 304L X4 4228 REF 3/16"" x 60"" x 120""","19,380lbs",2025-03-26,Formule Transit,"Lacolle, QC.","$1,400.00",2025-03-28,Y,Y,Y
+2025-03-20,UT,Kingmaker,"Somerset, NJ",Vera,P216528,," STU 304 WD 5/8"" x .049"" x 20'","1,800lbs",,,,,,Y,Y,Y
+2025-03-25,MD,Leveltek,"Benwood, WV",Kelly,C209389,,"SSH 201LN #80 1/4HARD PAPER .125 x 48"" x 120""","32,460lbs",2025-03-27,Essence - Toiture JM Rodrique & Fils,"Lansdowne, ON","$1,850.00",2025-04-01,Y,Y,Y
+2025-03-14,MD,Leveltek,"Benwood, WV",Kelly,C209387 ,,"SSH 301L 1/2 HARD PAPER .125 x 48"" x 190""","30,090lbs",2025-03-28,Essence - Trans Inter F&M,"Lansdowne, ON","$1,850.00",2025-04-10,Y,Y,Y
+2025-03-24,UT,Amerinox,"Camden, NJ",Rick,C209407 ,," SPL 304L HRAP NO PAPER 3/16"" x 48"" x 96""","20,420lbs",2025-03-31,Formule Transit,"Lansdowne, ON","$1,300.00",2025-04-08,Y,Y,Y
+2025-03-24,UT,Amerinox,"Camden, NJ",Rick,C209408,,"SPL 304L HRAP NO PAPER 3/16"" x 48"" x 120""","20,960lbs",,,,,,Y,Y,Y
+2025-03-28,UT,Amerinox,"Camden, NJ",Rick,C209385,,"SSH 316L X4 4228 REF 11ga x 60"" x 120"" / 240""","14,360lbs",2025-04-02,Formule Transit,"Lacolle, QC.","$1,500.00",2025-04-08,Y,Y,Y
+2025-03-31,UT,Kingmaker,"Somerset, NJ",Vera,P216564,,"STU 304L WD 1-1/4"" x .049"" x 20'",260lbs,,,,,,Y,Y,Y
+2025-03-31,UT,Ta Chen,"Burlington, NJ",Andrew,P216575,,"SAB 316L HRAP 6"" x 6"" x 1/2"" x 20'",579lbs,,,,,,Y,Y,Y
+2025-03-14,MD,Leveltek,"Benwood, WV",Kelly,C209390,,"SSH 201LN 1/4 HARD PAPER .090 x 48"" x 120""","23,500lbs",2025-04-03,Essence,,"$1,850.00",2025-04-08,Y,Y,Y
+2025-03-14,SM,Rigidized Metals,"Buffalo, NY",Chris <ChrisSchiller@rigidized.com,P216365,,"SSH 304 .075 48"" x 144""",458lbs,2025-04-04,DLV,-,$700.00,2025-04-10,Y,Y,Y
+2025-03-14,UT,Amerinox,"Camden, NJ",Rick,C209301,,"SSH 316L 2B 4228 REF 7ga x 48"" x 120""",940lbs,2025-04-07,DLV,-,$995.00,2025-04-14,Y,Y,Y
+2025-03-14,UT,Amerinox,"Camden, NJ",Rick,C209359,,"SSH 316L 2B 4228 REF 7ga x 48"" x 181""","7,360lbs",,,,,,Y,Y,Y
+2025-04-07,MD,Spectrum Metals,"Warminster, PA",Patrick,P216562 ,,Alum  x Coil,"1,000lbs",2025-05-01,DLV,-,$525.00,2025-04-22,Y,Y,Y
+2025-04-09,UT,Polished Metals,"Hillside, NJ",Mark,P216627,," SSH 304 X8 4228 REF 16ga x 60"" x 120""","5,131lbs",2025-04-15,Formule Transit,"Lacolle, QC.","$1,500.00",2025-04-22,Y,Y,Y
+2025-04-11,AA,Kingmaker,"Somerset, NJ",Vera,P216641,,"SST 304 X4 2"" x 1/4"" x 20'",120lbs,,,,,,Y,Y,Y
+2025-04-10,UT,Independent Stainless ,"Egg Harbor, NJ",Dean Sharon,P216635,," SFB 304 S/E 1/4"" x 2"" x 12-14'","5,000lbs",,,,,,Y,Y,Y
+2025-04-10,MD,Amerinox,"Camden, NJ",Rick,C209417,," SSH 201LN 2B PAPER .020 x 48"" x 96""","33,500lbs",2025-04-16,Essence,"Lansdowne, ON","$2,048.79",2025-04-21,Y,Y,Y
+2025-04-10,UT,Amerinox,"Camden, NJ",Rick,C209422,price with P216402 they just didn’t pickuped up that day," SSH 316L 2B 4228 REF 7ga x 60"" x 240"" ","18,710lbs",2025-04-24,Formule Transit,"Lacolle, QC.","$1,400.00",,Y,Y,Y
+2025-04-17,IXE,BC Fabrications Inc.,"New Berlinville, PA",Sharon Tallon ,W369270,INVOICE DELMAR," SSH 201LN 1/4 HARD PAPER .075 x 48"" x 120""","1,300lbs",2025-04-24,DLV,-,$700.00,2025-04-30,Y,Y,Y
+2025-04-15,BEN,United Performance Metals,"Hamilton, OH",Rick Breslin ,P216652,," SSH 17-4PH PAPER .063 x 36"" x 120"" ","1,078lbs",2025-04-25,DLV,-,$730.00,,Y,Y,Y
+2025-04-17,MD,Main Steel,"Harmony, PA",Mark,C209427,,"SSH 201LN 1/4 .030 x 48"" x 120""","13,270lbs",2025-04-29,Formule Transit,"Lansdowne, ON","$1,850.00",,Y,Y,Y
+2025-04-17,MD,Main Steel,"Harmony, PA",Mark,C209436,,"SSH 201LN 1/4 .075 x 48"" x 120""","33,450lbs",,,,,,Y,Y,Y
+2025-04-17,MD,Main Steel,"Harmony, PA",Mark,C209435,,"SSH 201LN 1/4 .050 x 48"" x 120""","34,810lbs",2025-04-29,Formule Transit,"Lacolle, QC.","$1,850.00",2025-04-30,Y,Y,Y
+2025-04-20,UT,Amerinox,"Camden, NJ",Rick,C209442,,"144""","17,800lbs",2025-04-29,Formule Transit,"Lacolle, QC.","$1,400.00",2025-05-06,Y,Y,Y
+2025-04-02,UT,Phoenix Tubes,"Bethlehem, PA",Illy,P216577,," SST 304 HRAP 4"" x 3/16"" x 94"" ","11,615lbs",,,,,,Y,Y,Y
+2025-03-04,MD,Polished Metals,"Hillside, NJ",Mark,P216402,,"SSH 316L X8 4228  11ga x 60"" x 144""","8,928lbs",,,,,,Y,Y,Y
+2025-04-11,MD,Leveltek,"Benwood, WV",Kelly,C209348 ,,,"29,240lbs",2025-04-28,Essence,"Lansdowne, ON","$1,850.00",2025-05-05,Y,Y,Y
+2025-04-11,MD,Leveltek,"Benwood, WV",Kelly,C209349 ,,,"31,000lbs",2025-04-28,Essence,"Alexandria Bay, NY","$1,850.00",2025-05-01,Y,Y,Y
+2025-04-17,UT,UNISERV ,"Brookfield, OH",Jeremiah Hill,C209322,,,"16,160lbs",2025-04-28,Formule Transit,"Lacolle, QC.","$1,650.00",,Y,Y,Y
+2025-04-17,UT,UNISERV ,"Brookfield, OH",Jeremiah Hill,C209322,,,"15,830lbs",2025-04-29,Formule Transit,"Lacolle, QC.","$1,950.00",2025-05-01,Y,Y,Y
+2025-04-17,UT,UNISERV ,"Brookfield, OH",Jeremiah Hill,C209322,,,"17,450lbs",,,,,,Y,Y,Y
+2025-04-17,UT,Amerinox,"Camden, NJ",Rick,C209434,DO NOT COMBINE W TUBES," SSH 304L 2B 4228 REF 7ga x 60"" x 240""","20,240lbs",2025-04-29,Formule Transit,"Lacolle, QC","$1,400.00",2025-05-01,Y,Y,Y
+2025-04-17,MD,Spectrum Metals,"Warminster, PA",Patrick,P216676,,"SSH 316L 2B 22ga x 5.394"" x Coil","1,624lbs",,,,,,Y,Y,Y
+2025-04-17,AA,Spectrum Metals,"Warminster, PA",Patrick,P216633,,"SSH 316L 2B 22ga x 5.394"" x Coil","1,000lbs",,,,,,Y,Y,Y
+2025-04-10,MD,Main Steel,"Harmony, PA",Mark,C209417,,"SSH 201LN 2B PAPER .020 x 48"" x 108""","33,363lbs",2025-04-30,Formule Transit,"Ogdensburg, NY","$1,850.00",2025-04-30,Y,Y,Y
+2025-04-22,UT,Amerinox,"Camden, NJ",Rick,C209444,," SPL 304L HRAP NO PAPER 1/4"" x 48"" x 240"" /  96""","15,190lbs",2025-04-30,Formule Transit,"Lacolle, QC","$1,500.00",2025-05-06,Y,Y,Y
+2025-04-17,UT,Amerinox,"Camden, NJ",Rick,C209429,," SSH 316L 2B 4228 REF 7ga x 60"" x 120""","16,980lbs",,,,,,Y,Y,Y
+2025-04-23,UT,Kingmaker,"Somerset, NJ",Vera,P216695,," STU 304 HRAP 3"" x .065"" x 20'","4,884lbs",,,,,,Y,Y,Y
+2025-04-15,UT,Polished Metals,"Hillside, NJ",Mark,P216653,," SSH 304 X 6 4228 REF 16ga /12ga / 22ga x 48"" x 96"""," 4,383lbs",,,,,,Y,Y,Y
+2025-04-17,MD,Leveltek,"Benwood, WV",Kelly,C209438,,"SSH 201LN 1/4 HARD PAPER .125 x 48"" x 120""","31,470lbs ",2025-05-01,Essence,"Alexandria Bay, NY","$1,850.00",2025-05-07,Y,Y,Y
+2025-04-25,MD,Leveltek,"Benwood, WV",Kelly,C209438,,"SSH 201LN 1/4 HARD PAPER .125 x 48"" x 120""","30,790lbs ",2025-05-01,Essence,"Lansdowne, ON","$1,850.00",,Y,Y,Y
+2025-04-21,UT,Ta Chen,"Pleasant Prairie, WI",Andrew,P216679,," SRB 316L CD 5/32"" x 12' ",121lbs,2025-05-01,DLV,-,$695.00,2025-05-07,Y,Y,Y
+2025-04-28,UT,Amerinox,"Camden, NJ",Rick,C209452,," SPL 304L HRAP NO PAPER 1/4"" x 60"" x 144""","19,200lbs",2025-05-06,Formule Transit,"Champlain, NY","$1,500.00",,Y,Y,Y
+2025-04-28,UT,Amerinox,"Camden, NJ",Rick,C209457,," SPL 304L HRAP NO PAPER 3/16"" x 60"" x 96""","17,510lbs",,,,,,Y,Y,Y
+2025-04-30,UT,Ta Chen,"Burlington, NJ",Andrew,P216742,,"SAB 304L HRAP 5"" x 3"" x 3/8"" x 20-22'",196lbs,,,,,,Y,Y,Y
+2025-04-28,UT,Independent Stainless ,"Egg Harbor, NJ",Dean Sharon,P216724,," SFB 304L S/E 1/2"" x 2-1/4"" x 9.8217'","3,762lbs",,,,,,Y,Y,Y
+2025-03-18,MD,Main Steel,"Harmony, PA",Mark,C209396,,"SSH 201LN 1/4 .050 x 48"" x 96""","27,260lbs",2025-05-08,,,"$1,850.00",,Y,Y,
+,,,,,,,,,,,,,,,,
+2025-04-15,UT,Polished Metals,"Hillside, NJ",Mark,P216715,," SSH 304 X8 4228 REF 16ga x 60"" x 120""",,,,,,,,,
+,,,,,,,,,,,,,,,,
+2025-05-07,MD,Ta Chen,"Burlington, NJ",Andrew,P216777,,"SCH 304 4"" X 1.5"" X .184"" X 20-22",400lbs,2025-05-12,,,,,,,
+,,,,,,,,,,,,,,,,
+2025-05-05,UT,Materials Technology Solutions,"Bensalem, PA ",Sahar,P216762,READY,"APL 5083-H321 0.25"" x 48"" x 144""",166lbs,,,,,,,,
+2025-04-17,UT,Amerinox,"Camden, NJ",Rick,C209430,READY," SSH 316L X4 4228 REF 14ga x 48"" x 120"" /  X4 4228 REF 14ga x 48"" x 96""","19,520lbs",2025-04-25,,,,,,,
+2025-04-21,UT,Amerinox,"Camden, NJ",Rick,C209443,READY,"SSH 316L 2B PAPER 10ga x 48"" x 240""","20,000lbs",,,,,,,,
+,,,,,,,,,,,,,,,,
+2025-01-20,PG,Combined Metals of Chicago,"Bellwood, IL",Manny,C209292,,"SSH 304 BA PAPER 22ga x 48"" x Coil","20,000lbs",,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,REQUEST STL#,rendezvous@danaca.com,,REQUEST Pick-up appointment,,,,,,,,,
