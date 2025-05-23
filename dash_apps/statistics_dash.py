@@ -149,7 +149,6 @@ def init_dashboard(flask_app):
 
         return fig1, fig2
 
-    print("✅ Dash attached to /dash_statistics/")
     return dash_app
 
 

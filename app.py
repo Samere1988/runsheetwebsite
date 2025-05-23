@@ -3,6 +3,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from selenium_scrape_containers import scrape_and_save
 
 
+
 def create_app():
     app = Flask(__name__)
     app.secret_key = '1234'

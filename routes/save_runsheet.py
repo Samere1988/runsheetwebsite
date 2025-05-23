@@ -3,9 +3,11 @@ from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
 from openpyxl.utils import get_column_letter
 import sqlite3
 import os
+from io import BytesIO
 from datetime import datetime, timedelta
 
 DATABASE_PATH = 'databases/Run Sheet Database.db'
+
 
 region_colors = {
     'North Shore': 'F79646',
@@ -79,15 +81,12 @@ def save_run_sheet_to_excel():
         start_row = int(start_cell[1:])
         driver_col = ord(driver_cell[0].upper()) - ord('A') + 1
 
-        # Region name
         region_cell = ws.cell(row=start_row, column=start_col, value=f"Region: {region}")
         region_cell.font = Font(bold=True, color=region_colors[region])
         region_cell.alignment = Alignment(horizontal="left")
 
-        # Driver name
         ws.cell(row=start_row, column=driver_col, value=drivers.get(region, "____________________"))
 
-        # Headers
         for i, header in enumerate(headers):
             cell = ws.cell(row=start_row + 1, column=start_col + i, value=header)
             cell.font = header_font
@@ -96,8 +95,6 @@ def save_run_sheet_to_excel():
             cell.border = border
 
         region_rows = region_data[region]
-
-        # Data rows
         for r, row in enumerate(region_rows):
             for c, key in enumerate(headers):
                 val = row[key]
@@ -105,14 +102,12 @@ def save_run_sheet_to_excel():
                 cell.alignment = Alignment(horizontal="center")
                 cell.border = border
 
-        # Fill blank rows (up to row 18)
         for r in range(len(region_rows), 16):
             for c in range(len(headers)):
                 cell = ws.cell(row=start_row + 2 + r, column=start_col + c)
                 cell.border = border
                 cell.alignment = Alignment(horizontal="center")
 
-        # Totals in row 19
         total_row = start_row + 18
         ws.cell(row=total_row, column=start_col + 2, value="Totals:").alignment = Alignment(horizontal="right")
         for offset, key in enumerate(["Weight", "Skids", "Bundles", "Coils"]):
@@ -123,29 +118,22 @@ def save_run_sheet_to_excel():
             cell.border = border
             cell.alignment = Alignment(horizontal="center")
 
-        # Auto-fit columns for all 19 rows
-        for col in range(1, 20):  # Columns A (1) to S (19)
+        for col in range(1, 20):
             max_len = 0
-            for row in range(1, 77):  # Rows 1 to 76 inclusive
+            for row in range(1, 77):
                 cell = ws.cell(row=row, column=col)
                 val = str(cell.value) if cell.value is not None else ""
                 max_len = max(max_len, len(val))
-
             col_letter = get_column_letter(col)
-            ws.column_dimensions[col_letter].width = max(max_len + 2, 8)  # Padding + minimum width
+            ws.column_dimensions[col_letter].width = max(max_len + 2, 8)
 
-    # Save to Desktop and Backups
-    filename, folder = get_latest_runsheet_filename()
-    desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")
-    os.makedirs(desktop_path, exist_ok=True)
-    wb.save(os.path.join(desktop_path, filename))
+    # ✅ Save in memory instead of disk
+    output = BytesIO()
+    wb.save(output)
+    output.seek(0)
 
-    backup_dir = os.path.join(os.getcwd(), "backups", folder)
-    os.makedirs(backup_dir, exist_ok=True)
-    wb.save(os.path.join(backup_dir, filename))
     save_totals_to_db(region_data)
-
-
+    return output
 
 def save_totals_to_db(region_data):
     total_weight = total_skids = total_bundles = total_coils = 0

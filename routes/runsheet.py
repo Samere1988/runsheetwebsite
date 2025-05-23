@@ -1,10 +1,10 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, send_from_directory,jsonify
+from flask import Blueprint, render_template, request, redirect, url_for, flash, send_from_directory,jsonify, send_file
 import sqlite3
 import os
 import openpyxl
 from openpyxl.utils.cell import coordinate_from_string, column_index_from_string
 from .save_runsheet import save_run_sheet_to_excel, get_latest_runsheet_filename
-from datetime import datetime, time
+from datetime import datetime, time, timedelta
 
 
 runsheet_bp = Blueprint('runsheet', __name__)
@@ -311,14 +311,22 @@ def save_run_sheet():
 
 @runsheet_bp.route('/download_run_sheet')
 def download_run_sheet():
-    backups_dir = os.path.join(os.getcwd(), 'backups')
-    latest_filename, folder = get_latest_runsheet_filename()
+    excel_stream = save_run_sheet_to_excel()
 
-    return send_from_directory(
-        directory=os.path.join(backups_dir, folder),
-        path=latest_filename,
-        as_attachment=True
+    # Generate next-day filename
+    today = datetime.now()
+    next_day = today + timedelta(days=3) if today.weekday() == 4 else today + timedelta(days=1)
+    weekday_name = next_day.strftime('%A').upper()
+    date_string = next_day.strftime('%m.%d.%Y')
+    filename = f"{weekday_name} RUN SHEET {date_string}.xlsx"
+
+    return send_file(
+        excel_stream,
+        as_attachment=True,
+        download_name=filename,
+        mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
     )
+
 
 # -------------------
 # Delete Run Customer
@@ -483,3 +491,34 @@ def update_run_entry():
 @runsheet_bp.route('/statistics', strict_slashes=False)
 def view_statistics():
     return redirect('/dash_statistics/')
+
+
+def get_region_data():
+    connection = sqlite3.connect(DATABASE_PATH)
+    connection.row_factory = sqlite3.Row
+    cursor = connection.cursor()
+
+    cursor.execute("SELECT * FROM 'Run Sheet'")
+    runsheet = cursor.fetchall()
+
+    regions = ['North Shore', 'Quebec', 'Montreal', 'Ontario', 'Drummond', 'Beauce', 'South Shore', 'Sherbrooke']
+    region_data = {region: [] for region in regions}
+
+    def safe_int(value):
+        try:
+            return int(float(value))
+        except:
+            return 0
+
+    for entry in runsheet:
+        region = entry['Region']
+        if region in region_data:
+            region_data[region].append({
+                'Weight': entry['Weight'],
+                'Skids': entry['Skids'],
+                'Bundles': entry['Bundles'],
+                'Coils': entry['Coils']
+            })
+
+    connection.close()
+    return region_data
